@@ -1969,6 +1969,11 @@ h3::after {
 h3:hover::after {
   width: 70px; /* Augmente la largeur au survol */
 }
+
+.presentation, .competences {
+  background-color: rgba(255, 255, 255, 0.8); /* Arrière-plan semi-transparent */
+  padding: 20px;
+}
  `}</style>
  </>
   );

@@ -5,17 +5,6 @@ import Link from "next/link";
 
 export default function Home() {
 
-  const showTab = (tabId: string) => {
-    const tabs = document.querySelectorAll('.tab-content');
-    const buttons = document.querySelectorAll('.tab-button');
-  
-    tabs.forEach((tab) => tab.classList.add('hidden'));
-    buttons.forEach((button) => button.classList.remove('active'));
-  
-    document.getElementById(tabId)?.classList.remove('hidden');
-    document.getElementById(tabId)?.classList.add('active');
-    document.querySelector(`[onClick="showTab('${tabId}')"]`)?.classList.add('active');
-  };
   const [scrollDirection, setScrollDirection] = useState('up'); // Initially scrolling up
   const [activeTab, setActiveTab] = useState("languages"); // Default tab
 
@@ -24,7 +13,7 @@ export default function Home() {
     let lastScrollTop = 0;
 
     const handleScroll = () => {
-      let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
       if (currentScroll > lastScrollTop) {
         // If scrolling down, hide the navbar

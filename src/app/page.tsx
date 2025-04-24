@@ -1970,39 +1970,7 @@ h3:hover::after {
   width: 70px; /* Augmente la largeur au survol */
 }
 
-.presentation, .competences {
-  background-color: rgba(255, 255, 255, 0.8); /* Arrière-plan semi-transparent */
-  padding: 20px;
-}
 
-.presentation, .competences {
-  background-color: #ffffff; /* Arrière-plan blanc opaque */
-  padding: 20px;
-  border-radius: 8px; /* Coins arrondis */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre pour un effet de profondeur */
-}
-
-.tab-button {
-  background-color: #0070f3; /* Couleur bleue pour le bouton */
-  color: #fff; /* Texte en blanc */
-  border: none; /* Supprime la bordure */
-  padding: 15px 30px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.tab-button.active {
-  background-color: #0056b3; /* Couleur bleue plus foncée pour l'onglet actif */
-  color: #fff;
-}
-
-.tab-button:hover {
-  background-color: #0056b3; /* Couleur bleue plus foncée au survol */
-  color: #fff;
-}
  `}</style>
  </>
   );

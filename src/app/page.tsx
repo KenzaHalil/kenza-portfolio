@@ -86,7 +86,7 @@ export default function Home() {
                 </div>
                 <div className="texte">
                 <p>
-                    Bonjour, je m'appelle Kenza HALIL et je suis actuellement en deuxième année de BUT Informatique à l'IUT de Villetaneuse, Université Sorbonne Paris Nord. Passionnée par l'informatique et le développement, je suis à la recherche d'une alternance pour mettre en pratique mes compétences et continuer à apprendre dans un environnement professionnel.
+                    Bonjour, je m'appelle Kenza HALIL et je suis actuellement en deuxième année de BUT Informatique à l'IUT de Villetaneuse, Université Sorbonne Paris Nord. Passionnée par l'informatique et le développement, je suis à la recherche d'une alternance de 12 mois pour ma troisième année afin mettre en pratique mes compétences et continuer à apprendre dans un environnement professionnel.
                 </p>
                 <p>
                     Au cours de mes études, j'ai acquis une solide maîtrise des langages de programmation tels que Python, PHP, JavaScript, ainsi que des technologies web comme HTML, CSS, et jQuery. J'ai également travaillé sur des projets de développement backend avec des bases de données SQL et PostgreSQL, ainsi que des applications front-end.
@@ -110,19 +110,19 @@ export default function Home() {
             <div className="skills-grid">
             <div className="column">
                 <h3>Web & API</h3>
+                <div className="skill-item">Canva<span className="percentage">90%</span></div>
+                <div className="skill-item">Django/Flask<span className="percentage">80%</span></div>
+                <div className="skill-item">JavaScript/jQuery<span className="percentage">75%</span></div>
                 <div className="skill-item">HTML / CSS / JS<span className="percentage">60%</span></div>
                 <div className="skill-item">PHP<span className="percentage">60%</span></div>
                 <div className="skill-item">Next.js<span className="percentage">50%</span></div>
-                <div className="skill-item">JavaScript/jQuery<span className="percentage">75%</span></div>
-                <div className="skill-item">Django/Flask<span className="percentage">80%</span></div>
-                <div className="skill-item">Canva<span className="percentage">90%</span></div>
             </div>
 
             <div className="column">
                 <h3>Bases de données & analyse</h3>
-                <div className="skill-item">MySQL<span className="percentage">80%</span></div>
                 <div className="skill-item">PostgreSQL<span className="percentage">90%</span></div>
                 <div className="skill-item">SQL<span className="percentage">90%</span></div>
+                <div className="skill-item">MySQL<span className="percentage">80%</span></div>
                 <div className="skill-item">Python(Pandas/Numpy)<span className="percentage">90%</span></div>
                 <div className="skill-item">Anaconda/Jupyter Notebook/outils de visualisation de données<span className="percentage">75%</span></div>
             </div>
@@ -148,14 +148,17 @@ export default function Home() {
                 <h3>Infrastructures & réseaux</h3>
                 <div className="skill-item">Serveurs LAMP/conception de réseaux TCP/IP<span className="percentage">70%</span></div>
                 <div className="skill-item">Linux<span className="percentage">95%</span></div>
+                <div className="skill-item">Windows<span className="percentage">95%</span></div>
+                <div className="skill-item">Android<span className="percentage">70%</span></div>
+                <div className="skill-item">Docker<span className="percentage">70%</span></div>
                 <div className="skill-item">Shell scripting<span className="percentage">70%</span></div>
             </div>
 
             <div className="column">
                 <h3>Outils de Développement & Gestion de Projets</h3>
                 <div className="skill-item">Git/GitHub<span className="percentage">95%</span></div>
-                <div className="skill-item">VS code/IntelliJ/Eclipse<span className="percentage">85%</span></div>
                 <div className="skill-item">UML<span className="percentage">95%</span></div>
+                <div className="skill-item">VS code/IntelliJ/Eclipse<span className="percentage">85%</span></div>
                 <div className="skill-item">Virtualbox/Marionnet<span className="percentage">70%</span></div>
             </div>
             </div>
@@ -183,7 +186,7 @@ export default function Home() {
                 <div className="timeline-content">
                     <h3>Baccalauréat Scientifique</h3>
                     <span>2022</span>
-                    <p>Mention Très-Bien (16.78) – Lycée Les trois frères SI-BACHIR</p>
+                    <p>Mention Très-Bien (16.78) – Lycée Les trois frères SI-BACHIR - Algérie</p>
                 </div>
                 </div>
 
@@ -193,7 +196,7 @@ export default function Home() {
                 <div className="timeline-content">
                     <h3>Brevet</h3>
                     <span>2020</span>
-                    <p>Mention Très Bien (18.01) – collège YOUCEF OUALI Mohand Larbi</p>
+                    <p>Mention Très Bien (18.01) – collège YOUCEF OUALI Mohand Larbi - Algérie</p>
                 </div>
                 </div>
             </div>
@@ -340,7 +343,7 @@ export default function Home() {
         <div className="card-back">
           <h3>Enseignement Particulier</h3>
           <span>2022 - Présent</span>
-          <p>Donner des cours particuliers en mathématiques, anglais, français et programmation à des collégiens et des lycéens.</p>
+          <p>Donner des cours particuliers en mathématiques, anglais, français et programmation à des collégiens et des lycéens (5 élèves).</p>
         </div>
       </div>
 
@@ -458,7 +461,7 @@ export default function Home() {
 </div>
 
 
-<div className={`tab-content ${activeTab === "langues" ? "active" : "hidden"}`} id="langues">
+  <div className={`tab-content ${activeTab === "langues" ? "active" : "hidden"}`} id="langues">
             <h3>Langues</h3>
             <div className="flags">
               <div className="flag">
@@ -482,26 +485,26 @@ export default function Home() {
           <div className={`tab-content ${activeTab === "soft-skills" ? "active" : "hidden"}`} id="soft-skills">
             <h3>Soft Skills</h3>
             <ul>
-              <li>Créativité — Je suis capable de trouver rapidement des solutions aux problèmes</li>
-              <li>Ambition — Je suis ambitieuse, motivée par la recherche de défis et d'opportunités. Ma détermination à réussir guide mes actions et me pousse à constamment repousser mes limites</li>
-              <li>Esprit d’équipe — Je suis capable de collaborer efficacement, à communiquer clairement et à être flexible et adaptable dans mon approche de travail en équipe.</li>
-              <li>Sérieux — Je suis sérieuse et engagée dans mes efforts, travaillant avec rigueur pour atteindre mes objectifs. Ma fiabilité et ma responsabilité font partie intégrante de ma personnalité.</li>
-              <li>Organisation — Je suis reconnue pour ma capacité à être méthodique et organisée, ce qui se traduit par une gestion efficace des tâches et des projets, ainsi qu'une attention particulière portée aux détails.</li>
-              <li>Adaptabilité — Je suis capable de m’ajuster rapidement aux changements et de m’adapter à de nouvelles situations, ce qui me permet de m’épanouir dans des environnements variés.</li>
-              <li>Curiosité — Je suis avide de connaissances et j’aime explorer de nouveaux domaines, ce qui me permet d'élargir constamment mes compétences.</li>
-              <li>Autonomie — Je suis capable de travailler de manière indépendante, en prenant des initiatives et en assumant la responsabilité de mes actions.</li>
+              <li><strong>Créativité</strong> — Je suis capable de trouver rapidement des solutions aux problèmes</li>
+              <li><strong>Ambition</strong> — Je suis ambitieuse, motivée par la recherche de défis et d'opportunités. Ma détermination à réussir guide mes actions et me pousse à constamment repousser mes limites</li>
+              <li><strong>Esprit d’équipe</strong> — Je suis capable de collaborer efficacement, à communiquer clairement et à être flexible et adaptable dans mon approche de travail en équipe.</li>
+              <li><strong>Sérieux</strong> — Je suis sérieuse et engagée dans mes efforts, travaillant avec rigueur pour atteindre mes objectifs. Ma fiabilité et ma responsabilité font partie intégrante de ma personnalité.</li>
+              <li><strong>Organisation</strong> — Je suis reconnue pour ma capacité à être méthodique et organisée, ce qui se traduit par une gestion efficace des tâches et des projets, ainsi qu'une attention particulière portée aux détails.</li>
+              <li><strong>Adaptabilité</strong> — Je suis capable de m’ajuster rapidement aux changements et de m’adapter à de nouvelles situations, ce qui me permet de m’épanouir dans des environnements variés.</li>
+              <li><strong>Curiosité</strong> — Je suis avide de connaissances et j’aime explorer de nouveaux domaines, ce qui me permet d'élargir constamment mes compétences.</li>
+              <li><strong>Autonomie</strong> — Je suis capable de travailler de manière indépendante, en prenant des initiatives et en assumant la responsabilité de mes actions.</li>
             </ul>
           </div>
           <div className={`tab-content ${activeTab === "passions" ? "active" : "hidden"}`} id="passions">
             <h3>Passions</h3>
             <ul>
-            <li>Développement informatique — une passion pour la création de solutions techniques et d’interfaces utiles.</li>
-            <li>Médecine — un fort intérêt pour le domaine de la santé et des sciences médicales.</li>
-            <li>Équitation — pratique et amour du lien avec les chevaux.</li>
-            <li>Cinéma (science-fiction) — fascination pour les univers futuristes, les récits visionnaires et les technologies imaginées.</li>
-            <li>Lecture — plaisir de découvrir de nouveaux univers à travers les livres et les romans.</li>
-            <li>Voyages — envie de découvrir d'autres cultures et d'explorer le monde.</li>
-            <li>Musique — écoute variée et inspiration dans la créativité musicale.</li>
+            <li><strong>Développement informatique</strong> — une passion pour la création de solutions techniques et d’interfaces utiles.</li>
+            <li><strong>Médecine</strong> — un fort intérêt pour le domaine de la santé et des sciences médicales.</li>
+            <li><strong>Équitation</strong> — pratique et amour du lien avec les chevaux.</li>
+            <li><strong>Cinéma (science-fiction)</strong> — fascination pour les univers futuristes, les récits visionnaires et les technologies imaginées.</li>
+            <li><strong>Lecture</strong> — plaisir de découvrir de nouveaux univers à travers les livres et les romans.</li>
+            <li><strong>Voyages</strong> — envie de découvrir d'autres cultures et d'explorer le monde.</li>
+            <li><strong>Musique</strong> — écoute variée et inspiration dans la créativité musicale.</li>
             </ul>
           </div>
         </div>

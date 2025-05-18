@@ -84,7 +84,7 @@ export default function Home() {
         </div>
         <div className="texte">
           <p>
-            Hello, my name is Kenza HALIL, and I am currently in my second year of a Bachelor's in Computer Science at IUT Villetaneuse, Sorbonne Paris North University. Passionate about computer science and development, I am looking for an apprenticeship to apply my skills and continue learning in a professional environment.
+            Hello, my name is Kenza HALIL, and I am currently in my second year of a Bachelor's in Computer Science at IUT Villetaneuse, Sorbonne Paris North University. Passionate about computer science and development, I am looking for an apprenticeship of 12 months starting in September 2025 to apply my skills and continue learning in a professional environment.
           </p>
           <p>
             During my studies, I have gained solid expertise in programming languages such as Python, PHP, JavaScript, as well as web technologies like HTML, CSS, and jQuery. I have also worked on backend development projects with SQL and PostgreSQL databases, as well as front-end applications.
@@ -107,19 +107,19 @@ export default function Home() {
             <div className="skills-grid">
             <div className="column">
                 <h3>Web & API</h3>
+                <div className="skill-item">Canva<span className="percentage">90%</span></div>
+                <div className="skill-item">Django/Flask<span className="percentage">80%</span></div>
+                <div className="skill-item">JavaScript/jQuery<span className="percentage">75%</span></div>
                 <div className="skill-item">HTML / CSS / JS<span className="percentage">60%</span></div>
                 <div className="skill-item">PHP<span className="percentage">60%</span></div>
                 <div className="skill-item">Next.js<span className="percentage">50%</span></div>
-                <div className="skill-item">JavaScript/jQuery<span className="percentage">75%</span></div>
-                <div className="skill-item">Django/Flask<span className="percentage">80%</span></div>
-                <div className="skill-item">Canva<span className="percentage">90%</span></div>
             </div>
 
             <div className="column">
                 <h3>Databases & Analysis</h3>
-                <div className="skill-item">MySQL<span className="percentage">80%</span></div>
                 <div className="skill-item">PostgreSQL<span className="percentage">90%</span></div>
                 <div className="skill-item">SQL<span className="percentage">90%</span></div>
+                <div className="skill-item">MySQL<span className="percentage">80%</span></div>
                 <div className="skill-item">Python(Pandas/Numpy)<span className="percentage">90%</span></div>
                 <div className="skill-item">Anaconda/Jupyter Notebook/Dta virtualization tools<span className="percentage">75%</span></div>
             </div>
@@ -145,14 +145,17 @@ export default function Home() {
                 <h3>Infrastructure & Networks</h3>
                 <div className="skill-item">LAMP Servers/Network Design TCP/IP<span className="percentage">70%</span></div>
                 <div className="skill-item">Linux<span className="percentage">95%</span></div>
+                <div className="skill-item">Windows<span className="percentage">95%</span></div>
+                <div className="skill-item">Android<span className="percentage">70%</span></div>
+                <div className="skill-item">Docker<span className="percentage">70%</span></div>
                 <div className="skill-item">Shell scripting<span className="percentage">70%</span></div>
             </div>
 
             <div className="column">
                 <h3>Development Tools & Project Management</h3>
                 <div className="skill-item">Git/GitHub<span className="percentage">95%</span></div>
-                <div className="skill-item">VS code/IntelliJ/Eclipse<span className="percentage">85%</span></div>
                 <div className="skill-item">UML<span className="percentage">95%</span></div>
+                <div className="skill-item">VS code/IntelliJ/Eclipse<span className="percentage">85%</span></div>
                 <div className="skill-item">Virtualbox/Marionnet<span className="percentage">70%</span></div>
             </div>
             </div>
@@ -178,7 +181,7 @@ export default function Home() {
       <div className="timeline-content">
         <h3>Scientific Baccalaureate</h3>
         <span>2022</span>
-        <p>Graduated with honors (16.78) – Lycée Les Trois Frères SI-BACHIR</p>
+        <p>Graduated with honors (16.78) – Lycée Les Trois Frères SI-BACHIR - Algeria</p>
       </div>
     </div>
 
@@ -187,7 +190,7 @@ export default function Home() {
       <div className="timeline-content">
         <h3>Middle School Diploma</h3>
         <span>2020</span>
-        <p>Graduated with honors (18.01) – Collège YOUCEF OUALI Mohand Larbi</p>
+        <p>Graduated with honors (18.01) – Collège YOUCEF OUALI Mohand Larbi - Algeria</p>
       </div>
     </div>
   </div>

@@ -4,7 +4,7 @@ import Head from "next/head";
 import Link from "next/link";
 
 export default function Home() {
-
+  const [showVelibVideo, setShowVelibVideo] = useState(false);
   const [scrollDirection, setScrollDirection] = useState('up'); // Initially scrolling up
   const [activeTab, setActiveTab] = useState("languages"); // Default tab
 
@@ -203,14 +203,27 @@ export default function Home() {
       {/* Project 1: Vélib Application */}
       <div className="project-card">
         <div className="card-front">
-          <img src="/images/velib.jpg" alt="Vélib Application" />
-          <h3>Development of the Vélib' Application</h3>
+          <img src="/images/velib.jpg" alt="Application Vélib" />
+          <h3>Vélib'</h3>
         </div>
         <div className="card-back">
-          <p>As part of a university project, I developed a Vélib' station management application with my team. It allows users to locate available stations in real-time, check available bikes and slots, simulate reservations, and track usage history. The project uses open data, a REST API, and was designed with a modular software architecture. I applied UML modeling and the TDD (Test Driven Development) method to ensure code quality and reliability.</p>
-          <a href="https://github.com/KenzaHalil/Velib" target="_blank" rel="noopener noreferrer" className="btn">View on GitHub</a>
+          <p>As part of a university project, I developed a Vélib' station management web and mobile application with my team. It allows users to locate available stations in real-time, check available bikes and slots, simulate reservations, and track usage history. The project uses open data, a REST API, and was designed with a modular software architecture. I applied UML modeling and the TDD (Test Driven Development) method to ensure code quality and reliability.</p>
+          <a href="https://github.com/KenzaHalil/Velib" target="_blank" rel="noopener noreferrer" className="btn">Web app</a>
+          <a href="https://github.com/KenzaHalil/Velib_mobile" target="_blank" rel="noopener noreferrer" className="btn">Mobile app</a>
+          <button className="btn" onClick={() => setShowVelibVideo(!showVelibVideo)}>
+            {showVelibVideo ? "Masquer la vidéo" : "Voir la vidéo"}
+          </button>
+          {showVelibVideo && (
+            <div style={{ marginTop: "15px" }}>
+              <video width="100%" controls>
+                <source src="/videos/velib-demo.mp4" type="video/mp4" />
+                Votre navigateur ne supporte pas la vidéo.
+              </video>
+            </div>
+          )}
         </div>
       </div>
+      
 
       {/* Project 2: Portfolio Version 1 */}
       <div className="project-card">

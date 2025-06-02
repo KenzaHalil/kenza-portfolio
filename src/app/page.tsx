@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Home() {
 
-  
+  const [showVelibVideo, setShowVelibVideo] = useState(false);
   const [scrollDirection, setScrollDirection] = useState('up'); // Initialement vers le haut
   const [activeTab, setActiveTab] = useState("langues"); // Onglet par défaut
 
@@ -213,8 +213,22 @@ export default function Home() {
           <h3>Développement de l'application Vélib'</h3>
         </div>
         <div className="card-back">
-          <p>Dans le cadre d’un projet universitaire, j’ai développé une application de gestion des stations Vélib’ avec mon équipe permettant de localiser en temps réel les stations disponibles, consulter les vélos et emplacements libres, simuler des réservations et suivre l’historique des utilisations. Le projet s’appuie sur des données open data et une API REST. J’ai appliqué la modélisation UML et la méthode TDD (Test Driven Development) pour garantir la qualité et la fiabilité du code.</p>
-          <a href="https://github.com/KenzaHalil/Velib" target="_blank" rel="noopener noreferrer" className="btn">Voir sur GitHub</a>
+          <p>
+            Dans le cadre d’un projet universitaire, j’ai développé une application web et mobile de gestion des stations Vélib’ avec mon équipe permettant de localiser en temps réel les stations disponibles, consulter les vélos et emplacements libres, simuler des réservations et suivre l’historique des utilisations. Le projet s’appuie sur des données open data et une API REST. J’ai appliqué la modélisation UML et la méthode TDD (Test Driven Development) pour garantir la qualité et la fiabilité du code.
+          </p>
+          <a href="https://github.com/KenzaHalil/Velib" target="_blank" rel="noopener noreferrer" className="btn">Application web</a>
+          <a href="https://github.com/KenzaHalil/Velib_mobile" target="_blank" rel="noopener noreferrer" className="btn">Application mobile</a>
+          <button className="btn" onClick={() => setShowVelibVideo(!showVelibVideo)}>
+            {showVelibVideo ? "Masquer la vidéo" : "Voir la vidéo"}
+          </button>
+          {showVelibVideo && (
+            <div style={{ marginTop: "15px" }}>
+              <video width="100%" controls>
+                <source src="/videos/velib-demo.mp4" type="video/mp4" />
+                Votre navigateur ne supporte pas la vidéo.
+              </video>
+            </div>
+          )}
         </div>
       </div>
 

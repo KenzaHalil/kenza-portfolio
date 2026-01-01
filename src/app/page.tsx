@@ -70,7 +70,7 @@ export default function Home() {
         </nav>
         <div className="hero-content">
           <h1>Kenza HALIL</h1>
-          <p><strong>Étudiante en Informatique à la recherche d'une alternance</strong></p>
+          <p><strong>Étudiante en troisième année de BUT Informatique en alternance</strong></p>
           <p><strong>“Code ton futur avec passion & détermination!”</strong></p>
         </div>
       </header>
@@ -86,13 +86,13 @@ export default function Home() {
                 </div>
                 <div className="texte">
                 <p>
-                    Bonjour, je m'appelle Kenza HALIL et je suis actuellement en deuxième année de BUT Informatique à l'IUT de Villetaneuse, Université Sorbonne Paris Nord. Passionnée par l'informatique et le développement, je suis à la recherche d'une alternance de 12 mois pour ma troisième année afin mettre en pratique mes compétences et continuer à apprendre dans un environnement professionnel.
+                    Bonjour, je m’appelle Kenza HALIL. Étudiante en troisième année de BUT Informatique à l’IUT de Villetaneuse – Université Sorbonne Paris Nord, je réalise actuellement une alternance de 12 mois à CY Cergy Paris Université. Passionnée par l’informatique et le développement, je m’investis pleinement dans des projets visant à renforcer mes compétences techniques, tout en développant une approche rigoureuse et professionnelle du monde du numérique.
                 </p>
                 <p>
-                    Au cours de mes études, j'ai acquis une solide maîtrise des langages de programmation tels que Python, PHP, JavaScript, ainsi que des technologies web comme HTML, CSS, et jQuery. J'ai également travaillé sur des projets de développement backend avec des bases de données SQL et PostgreSQL, ainsi que des applications front-end.
+                    Au cours de mes études, j'ai acquis une solide maîtrise des langages de programmation tels que Python, PHP, JavaScript, ainsi que des technologies web comme HTML, CSS, et jQuery. J’ai également travaillé sur des projets de développement backend, impliquant la conception et la gestion de bases de données relationnelles (SQL, PostgreSQL), ainsi que sur le développement d’interfaces front-end. Par ailleurs, j’ai participé à un projet de développement d’application mobile intégrant des modèles d’intelligence artificielle, visant à analyser des caractéristiques telles que l’âge, l’ethnie et le genre à partir de données visuelles
                 </p>
                 <p>
-                    Je suis une personne curieuse, motivée et toujours en quête de nouveaux défis. Mon objectif est de développer mes compétences en programmation et d'acquérir de l'expérience pour contribuer à des projets innovants. Vous pouvez découvrir plus de détails sur mon parcours et mes compétences dans ce portfolio.
+                    Je suis une personne curieuse, motivée et toujours en quête de nouveaux défis. Mon objectif est de développer mes compétences en programmation et d'acquérir plus d'expérience pour contribuer à des projets innovants. Vous pouvez découvrir plus de détails sur mon parcours et mes compétences dans ce portfolio.
                 </p>
                 <p>
                     Vous pouvez également consulter le programme de mon diplôme <a href="https://iutv.univ-paris13.fr/but-informatique/" target="_blank" rel="noopener noreferrer">ici</a> pour en savoir plus sur les matières que j'ai étudiées et les compétences que j'ai développées.
@@ -108,6 +108,18 @@ export default function Home() {
         <div className="content">
             <h2>Mes Compétences</h2>
             <div className="skills-grid">
+
+            <div className="column">
+                <h3>Intelligence Artificielle</h3>
+                <div className="skill-item">Réseaux de neurones (Perceptron, MLP)<span className="percentage">80%</span></div>
+                <div className="skill-item">CNN (Convolutional Neural Networks)<span className="percentage">75%</span></div>
+                <div className="skill-item">Machine Learning<span className="percentage">80%</span></div>
+                <div className="skill-item">Deep Learning<span className="percentage">70%</span></div>
+                <div className="skill-item">Classification & régression<span className="percentage">85%</span></div>
+                <div className="skill-item">Traitement d’images<span className="percentage">70%</span></div>
+                <div className="skill-item">Python (TensorFlow)<span className="percentage">75%</span></div>
+            </div>
+
             <div className="column">
                 <h3>Web & API</h3>
                 <div className="skill-item">Canva<span className="percentage">90%</span></div>
@@ -174,7 +186,7 @@ export default function Home() {
                 <div className="timeline-item left">
                 <div className="timeline-dot"></div>
                 <div className="timeline-content">
-                    <h3>Deuxième année de BUT Informatique (Première année validée)</h3>
+                    <h3>Troisième année de BUT Informatique en alternance (Première et deuxième années validées)</h3>
                     <span>2023 - en cours</span>
                     <p>Université Sorbonne Paris Nord – IUT de Villetaneuse</p>
                 </div>
@@ -206,6 +218,25 @@ export default function Home() {
   <div className="content">
     <h2>Mes Projets</h2>
     <div className="project-grid">
+      {/* Projet IA mis en avant */}
+      <div className="project-card featured">
+        <div className="card-front">
+          <img src="/images/IA.jpg" alt="Application mobile d’analyse par intelligence artificielle" />
+          <h3>Application mobile d’analyse par IA</h3>
+          <span className="pill">Projet académique · IA</span>
+        </div>
+
+        <div className="card-back">
+          <p>
+            Application mobile permettant l’analyse d’une image afin d’estimer automatiquement des caractéristiques telles que l’âge, le genre et l’ethnicité probable d’une personne.
+            Le projet s’appuie sur l’utilisation de réseaux de neurones convolutifs (CNN), avec la mise en place de quatre modèles distincts : un modèle dédié à la prédiction de l’âge, un modèle pour le genre, un modèle pour l’ethnicité, ainsi qu’un modèle global visant à centraliser et harmoniser les prédictions. Une attention particulière est portée à l’optimisation des performances et à l’expérience utilisateur sur mobile.
+          </p>
+
+          <a href="#contact" className="btn">Discuter du projet</a>
+        </div>
+      </div>
+
+
       {/* Projet 1 : Application Vélib */}
       <div className="project-card">
         <div className="card-front">
@@ -348,18 +379,22 @@ export default function Home() {
     <h2>Expériences</h2>
     <div className="experience-grid">
 
-      {/* Expérience 1 : Enseignement particulier */}
+      {/* Expérience 1 : Alternance CY Cergy Paris Université */}
       <div className="experience-card">
         <div className="card-front">
-          <img src="/images/teaching.jpg" alt="Enseignement" />
-          <h3>Enseignement Particulier</h3>
+          <img src="/images/gargantua.jpg" alt="Automatisation de processus" />
+          <h3>Alternance CY Cergy Paris Université</h3>
         </div>
         <div className="card-back">
-          <h3>Enseignement Particulier</h3>
-          <span>2022 - Présent</span>
-          <p>Donner des cours particuliers en mathématiques, anglais, français et programmation à des collégiens et des lycéens (5 élèves).</p>
+          <h3>Alternance CY Cergy Paris Université</h3>
+          <span>12 mois</span>
+          <span>Dév & automatisation avec Gargantua</span>
+          <p>Développement et automatisation de processus métiers au sein de l’université, en industrialisant des workflows avec la plateforme Gargantua et en assurant leur maintenance.</p>
+          <a href="/pdf/rapport_alternance_1.pdf" download="Rapport_Alternance_1" className="btn">Rapport Alternance 1</a>
+          <a href="/pdf/rapport_alternance_2.pdf" download="Rapport_Alternance_2" className="btn">Rapport Alternance 2</a>
         </div>
       </div>
+
 
       {/* Expérience 2 : Stage */}
       <div className="experience-card">
@@ -378,6 +413,21 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Expérience 3 : Enseignement particulier */}
+      <div className="experience-card">
+        <div className="card-front">
+          <img src="/images/teaching.jpg" alt="Enseignement" />
+          <h3>Enseignement Particulier</h3>
+        </div>
+        <div className="card-back">
+          <h3>Enseignement Particulier</h3>
+          <span>2022 - Présent</span>
+          <p>Donner des cours particuliers en mathématiques, anglais, français et programmation à des collégiens et des lycéens (5 élèves).</p>
+        </div>
+      </div>
+
+      
+      {/* Expérience 2 : Caissière chez ACTION */}
       <div className="experience-card">
         <div className="card-front">
             <img src="/images/cashier.jpg" alt="Caissière chez ACTION" />
@@ -1338,16 +1388,21 @@ export default function Home() {
 }
 
 .experience-card:last-child {
-  grid-column: span 3; /* Étend la dernière carte sur deux colonnes */
-  justify-self: center; /* Centre la carte dans la grille */
+  grid-column: auto; /* Garde l'alignement standard dans la grille */
+  justify-self: center;
 }
 
 .experience-card:first-child {
-  margin-top: 450px; /* Décale la première carte vers le bas */
+  margin-top: 0;
 }
 
 .experience-card:nth-child(3) {
-  margin-top: 450px; /* Décale la troisième carte vers le bas */
+  margin-top: 0;
+}
+
+.experience-card:nth-child(4),
+.experience-card:nth-child(5) {
+  margin-top: 0; /* Aligne Caissière et Baby-sitting sur la même ligne */
 }
 
 
@@ -1734,6 +1789,12 @@ ul li strong {
   margin-bottom: 40px;
 }
 
+.project-card.featured {
+  max-width: 380px;
+  height: 430px;
+  position: relative;
+}
+
 .card-front,
 .card-back {
   width: 100%;
@@ -1800,6 +1861,26 @@ ul li strong {
   background-color: #0056b3;
   transform: translateY(-3px);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.pill {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #0070f3, #4da1ff);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.4px;
+  box-shadow: 0 6px 14px rgba(0, 112, 243, 0.35);
+}
+
+.card-back .tech-list {
+  margin-top: -10px;
+  margin-bottom: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
 }
 
 .footer {

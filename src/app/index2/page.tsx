@@ -68,7 +68,7 @@ export default function Home() {
         </nav>
         <div className="hero-content">
           <h1>Kenza HALIL</h1>
-          <p><strong>Computer Science Student Seeking an Apprenticeship</strong></p>
+          <p><strong>Computer Science Student</strong></p>
           <p><strong>“Code your future with passion & determination!”</strong></p>
         </div>
       </header>
@@ -84,13 +84,13 @@ export default function Home() {
         </div>
         <div className="texte">
           <p>
-            Hello, my name is Kenza HALIL, and I am currently in my second year of a Bachelor's in Computer Science at IUT Villetaneuse, Sorbonne Paris North University. Passionate about computer science and development, I am looking for an apprenticeship of 12 months starting in September 2025 to apply my skills and continue learning in a professional environment.
+            Hello, my name is Kenza HALIL. I am currently a third-year student in a Bachelor of Computer Science at IUT Villetaneuse – Sorbonne Paris North University, and I am completing a 12-month apprenticeship at CY Cergy Paris University. Passionate about computer science and development, I am fully committed to projects aimed at strengthening my technical skills while developing a rigorous and professional approach to the digital world.
           </p>
           <p>
-            During my studies, I have gained solid expertise in programming languages such as Python, PHP, JavaScript, as well as web technologies like HTML, CSS, and jQuery. I have also worked on backend development projects with SQL and PostgreSQL databases, as well as front-end applications.
+            During my studies, I have gained solid expertise in programming languages such as Python, PHP, and JavaScript, as well as web technologies like HTML, CSS, and jQuery. I have also worked on backend development projects involving the design and management of relational databases (SQL, PostgreSQL), as well as front-end interface development. Additionally, I participated in a mobile application development project integrating artificial intelligence models to analyze characteristics such as age, ethnicity, and gender from visual data.
           </p>
           <p>
-            I am a curious, motivated person who is always seeking new challenges. My goal is to develop my programming skills and gain experience to contribute to innovative projects. You can find more details about my background and skills in this portfolio.
+            I am a curious, motivated person who is always seeking new challenges. My goal is to develop my programming skills and gain more experience to contribute to innovative projects. You can find more details about my background and skills in this portfolio.
           </p>
           <p>
             You can also check out the curriculum of my degree <a href="https://iutv.univ-paris13.fr/but-informatique/" target="_blank" rel="noopener noreferrer">here</a> to learn more about the subjects I have studied and the skills I have developed.
@@ -105,6 +105,18 @@ export default function Home() {
         <div className="content">
             <h2>Skills</h2>
             <div className="skills-grid">
+
+            <div className="column">
+                <h3>Artificial Intelligence</h3>
+                <div className="skill-item">Neural Networks (Perceptron, MLP)<span className="percentage">80%</span></div>
+                <div className="skill-item">CNN (Convolutional Neural Networks)<span className="percentage">75%</span></div>
+                <div className="skill-item">Machine Learning<span className="percentage">80%</span></div>
+                <div className="skill-item">Deep Learning<span className="percentage">70%</span></div>
+                <div className="skill-item">Classification & Regression<span className="percentage">85%</span></div>
+                <div className="skill-item">Image Processing<span className="percentage">70%</span></div>
+                <div className="skill-item">Python (TensorFlow)<span className="percentage">75%</span></div>
+            </div>
+
             <div className="column">
                 <h3>Web & API</h3>
                 <div className="skill-item">Canva<span className="percentage">90%</span></div>
@@ -170,7 +182,7 @@ export default function Home() {
     <div className="timeline-item left">
       <div className="timeline-dot"></div>
       <div className="timeline-content">
-        <h3>Second Year of Bachelor's in Computer Science (First Year Completed)</h3>
+        <h3>Third Year of Bachelor's in Computer Science (First and second Year Completed)</h3>
         <span>2023 - Present</span>
         <p>Sorbonne Paris North University – IUT of Villetaneuse</p>
       </div>
@@ -200,6 +212,25 @@ export default function Home() {
   <div className="content">
     <h2>Projects</h2>
     <div className="project-grid">
+      {/* Featured AI Project */}
+      <div className="project-card featured">
+        <div className="card-front">
+          <img src="/images/IA.jpg" alt="AI mobile analysis application" />
+          <h3>AI Mobile Analysis App</h3>
+          <span className="pill">Academic Project · AI</span>
+        </div>
+
+        <div className="card-back">
+          <p>
+            Mobile application that analyzes an image to automatically estimate characteristics such as age, gender, and probable ethnicity of a person.
+            The project relies on the use of convolutional neural networks (CNN), with the implementation of four distinct models: one dedicated to age prediction, one for gender, one for ethnicity, and a global model to centralize and harmonize predictions. Particular attention is paid to performance optimization and mobile user experience.
+          </p>
+
+          <a href="#contact" className="btn">Discuss the project</a>
+        </div>
+      </div>
+
+
       {/* Project 1: Vélib Application */}
       <div className="project-card">
         <div className="card-front">
@@ -339,18 +370,22 @@ export default function Home() {
     <h2>Experiences</h2>
     <div className="experience-grid">
 
-      {/* Experience 1: Private Tutoring */}
+      {/* Experience 1: Apprenticeship at CY Cergy Paris University */}
       <div className="experience-card">
         <div className="card-front">
-          <img src="/images/teaching.jpg" alt="Private Tutoring" />
-          <h3>Teaching</h3>
+          <img src="/images/gargantua.jpg" alt="Process automation" />
+          <h3>Apprenticeship at CY Cergy Paris University</h3>
         </div>
         <div className="card-back">
-          <h3>Private Tutoring</h3>
-          <span>2022 - Present</span>
-          <p>Providing private lessons in mathematics, English, French, and programming to middle and high school students.</p>
+          <h3>Apprenticeship at CY Cergy Paris University</h3>
+          <span>12 months</span>
+          <span>Dev & automation with Gargantua</span>
+          <p>Development and automation of business processes within the university, industrializing workflows with the Gargantua platform and ensuring their maintenance.</p>
+          <a href="/pdf/rapport_alternance_1.pdf" download="Apprenticeship_Report_1" className="btn">Apprenticeship Report 1</a>
+          <a href="/pdf/rapport_alternance_2.pdf" download="Apprenticeship_Report_2" className="btn">Apprenticeship Report 2</a>
         </div>
       </div>
+
 
       {/* Experience 2: Internship */}
       <div className="experience-card">
@@ -368,7 +403,21 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Experience 3: Cashier at ACTION */}
+      {/* Experience 3: Private Tutoring */}
+      <div className="experience-card">
+        <div className="card-front">
+          <img src="/images/teaching.jpg" alt="Private Tutoring" />
+          <h3>Teaching</h3>
+        </div>
+        <div className="card-back">
+          <h3>Private Tutoring</h3>
+          <span>2022 - Present</span>
+          <p>Providing private lessons in mathematics, English, French, and programming to middle and high school students.</p>
+        </div>
+      </div>
+
+      
+      {/* Experience 4: Cashier at ACTION */}
       <div className="experience-card">
         <div className="card-front">
           <img src="/images/cashier.jpg" alt="Cashier at ACTION" />
@@ -1332,16 +1381,21 @@ export default function Home() {
 }
 
 .experience-card:last-child {
-  grid-column: span 3; /* Étend la dernière carte sur deux colonnes */
-  justify-self: center; /* Centre la carte dans la grille */
+  grid-column: auto; /* Garde l'alignement standard dans la grille */
+  justify-self: center;
 }
 
 .experience-card:first-child {
-  margin-top: 450px; /* Décale la première carte vers le bas */
+  margin-top: 0;
 }
 
 .experience-card:nth-child(3) {
-  margin-top: 450px; /* Décale la troisième carte vers le bas */
+  margin-top: 0;
+}
+
+.experience-card:nth-child(4),
+.experience-card:nth-child(5) {
+  margin-top: 0; /* Aligne Caissière et Baby-sitting sur la même ligne */
 }
 
 
@@ -1728,6 +1782,12 @@ ul li strong {
   margin-bottom: 40px;
 }
 
+.project-card.featured {
+  max-width: 380px;
+  height: 430px;
+  position: relative;
+}
+
 .card-front,
 .card-back {
   width: 100%;
@@ -1794,6 +1854,26 @@ ul li strong {
   background-color: #0056b3;
   transform: translateY(-3px);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.pill {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #0070f3, #4da1ff);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.4px;
+  box-shadow: 0 6px 14px rgba(0, 112, 243, 0.35);
+}
+
+.card-back .tech-list {
+  margin-top: -10px;
+  margin-bottom: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
 }
 
 .footer {

@@ -232,7 +232,7 @@ export default function Home() {
         <div className="card-front">
           <img src="/images/IA.jpg" alt="Application mobile d’analyse par intelligence artificielle" />
           <h3>Application mobile d’analyse par IA</h3>
-          <span className="pill">Projet académique · IA</span>
+          <span className="pill">Projet · IA</span>
         </div>
 
         <div className="card-back">
@@ -241,7 +241,8 @@ export default function Home() {
             Le projet s’appuie sur l’utilisation de réseaux de neurones convolutifs (CNN), avec la mise en place de quatre modèles distincts : un modèle dédié à la prédiction de l’âge, un modèle pour le genre, un modèle pour l’ethnicité, ainsi qu’un modèle global visant à centraliser et harmoniser les prédictions. Une attention particulière est portée à l’optimisation des performances et à l’expérience utilisateur sur mobile.
           </p>
 
-          <a href="#contact" className="btn">Discuter du projet</a>
+          <a href="https://github.com/KenzaHalil/Projet_IA_Face" target="_blank" rel="noopener noreferrer" className="btn">Code GitHub</a>
+          <a href="/pdf/rapport-ia.pdf" download className="btn">Télécharger le rapport</a>
         </div>
       </div>
 

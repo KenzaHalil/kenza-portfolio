@@ -235,6 +235,8 @@ export default function Home() {
             The project relies on the use of convolutional neural networks (CNN), with the implementation of four distinct models: one dedicated to age prediction, one for gender, one for ethnicity, and a global model to centralize and harmonize predictions. Particular attention is paid to performance optimization and mobile user experience.
           </p>
 
+          <a href="https://github.com/KenzaHalil/Projet_IA_Face" target="_blank" rel="noopener noreferrer" className="btn">GitHub Code</a>
+          <a href="/pdf/rapport-ia.pdf" download className="btn">Download Report</a>
           <a href="#contact" className="btn">Discuss the project</a>
         </div>
       </div>

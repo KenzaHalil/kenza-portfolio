@@ -182,6 +182,9 @@ export default function Home() {
     <div className="timeline-item left">
       <div className="timeline-dot"></div>
       <div className="timeline-content">
+        <div className="formation-image">
+          <img src="/images/iut.jpg" alt="IUT of Villetaneuse" />
+        </div>
         <h3>Third Year of Bachelor's in Computer Science (First and second Year Completed)</h3>
         <span>2023 - Present</span>
         <p>Sorbonne Paris North University – IUT of Villetaneuse</p>
@@ -191,6 +194,9 @@ export default function Home() {
     <div className="timeline-item right">
       <div className="timeline-dot"></div>
       <div className="timeline-content">
+        <div className="formation-image">
+          <img src="/images/lycee.jpg" alt="Lycée Les Trois Frères SI-BACHIR" />
+        </div>
         <h3>Scientific Baccalaureate</h3>
         <span>2022</span>
         <p>Graduated with honors (16.78) – Lycée Les Trois Frères SI-BACHIR - Algeria</p>
@@ -200,6 +206,9 @@ export default function Home() {
     <div className="timeline-item left">
       <div className="timeline-dot"></div>
       <div className="timeline-content">
+        <div className="formation-image">
+          <img src="/images/college.jpg" alt="Collège YOUCEF OUALI Mohand Larbi" />
+        </div>
         <h3>Middle School Diploma</h3>
         <span>2020</span>
         <p>Graduated with honors (18.01) – Collège YOUCEF OUALI Mohand Larbi - Algeria</p>
@@ -1084,6 +1093,59 @@ export default function Home() {
     border: 4px solid white;
     box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.3); /* Effet lumineux */
     z-index: 1;
+  }
+
+  .timeline-image {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 110px;
+    height: 110px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 3px solid white;
+    background: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .timeline-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .timeline-image:hover {
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  }
+
+  .timeline-item.left .timeline-image {
+    right: calc(50% + 90px);
+  }
+
+  .timeline-item.right .timeline-image {
+    left: calc(50% + 90px);
+  }
+
+  .formation-image {
+    width: 100%;
+    height: 180px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .formation-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .formation-image:hover img {
+    transform: scale(1.05);
   }
 
   .timeline-line {

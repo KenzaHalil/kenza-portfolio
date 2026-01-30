@@ -414,6 +414,27 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Experience 2: Tutoring */}
+      <div className="experience-card">
+        <div className="card-front">
+          <img src="/images/tutoring.jpg" alt="Tutoring sessions" />
+          <h3>Computer Science Tutoring Sessions</h3>
+        </div>
+
+        <div className="card-back">
+          <h3>Tutor – Student Support</h3>
+          <span>During the academic year</span>
+          <span>BUT Computer Science (1st and 2nd year)</span>
+          <p>
+            Participation in tutoring sessions during lunch breaks, providing support
+            to first- and second-year Computer Science students. Answering technical
+            questions, helping with course concepts, assisting with projects, and
+            offering methodological and academic advice.
+          </p>
+        </div>
+      </div>
+
+
       {/* Experience 3: Private Tutoring */}
       <div className="experience-card">
         <div className="card-front">

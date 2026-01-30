@@ -423,6 +423,27 @@ export default function Home() {
         </div>
       </div>
 
+
+    {/* Expérience supp : Tutorat */}
+    <div className="experience-card">
+      <div className="card-front">
+        <img src="/images/tutorat.jpg" alt="Séances de tutorat" />
+        <h3>Séances de tutorat en informatique</h3>
+      </div>
+
+      <div className="card-back">
+        <h3>Tutorat – Accompagnement des étudiants</h3>
+        <span>Durant l’année universitaire</span>
+        <span>BUT Informatique (1re et 2e année)</span>
+        <p>
+          Participation à des séances de tutorat pendant les pauses de midi :
+          aide à la compréhension des notions vues en cours, réponse aux questions
+          techniques, stage et alternance, accompagnement sur les projets et conseils méthodologiques
+          pour les étudiants de BUT 1 et BUT 2.
+        </p>
+      </div>
+    </div>
+
       {/* Expérience 3 : Enseignement particulier */}
       <div className="experience-card">
         <div className="card-front">

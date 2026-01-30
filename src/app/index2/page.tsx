@@ -417,7 +417,7 @@ export default function Home() {
       {/* Experience 2: Tutoring */}
       <div className="experience-card">
         <div className="card-front">
-          <img src="/images/tutoring.jpg" alt="Tutoring sessions" />
+          <img src="/images/tutorat.jpg" alt="Tutoring sessions" />
           <h3>Computer Science Tutoring Sessions</h3>
         </div>
 

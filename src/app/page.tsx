@@ -638,6 +638,21 @@ export default function Home() {
           </a>
         </div>
       </div>
+
+      {/* Référence 3 */}
+      <div className="reference-card">
+        <img src="/images/person3.jpg" alt="Martial Dubois" className="reference-photo" />
+        <h3>Martial Dubois</h3>
+        <p>Responsable de projet Gargantua à CY Cergy Paris Université</p>
+        <div className="reference-buttons">
+          <a href="mailto:martial.dubois@cyu.fr" className="icon-button" target="_blank" rel="noopener noreferrer">
+            <img src="/icons/email.svg" alt="Email" />
+          </a>
+          <a href="https://www.linkedin.com/in/martialdubois/" className="icon-button" target="_blank" rel="noopener noreferrer">
+            <img src="/icons/linkedin.svg" alt="LinkedIn" />
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -775,7 +790,7 @@ export default function Home() {
           left: 50%;
           transform: translate(-50%, -50%);
           text-align: center;
-          background-color: rgba(255, 255, 255, 0.4);
+          background-color: rgba(255, 255, 255, 0.7);
           padding: 30px 50px;
           border-radius: 25px;
           box-shadow: 0 0 20px rgba(0,0,0,0.3);

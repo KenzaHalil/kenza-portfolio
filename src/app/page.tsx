@@ -9,6 +9,7 @@ export default function Home() {
   const [showVelibVideo, setShowVelibVideo] = useState(false);
   const [scrollDirection, setScrollDirection] = useState('up'); // Initialement vers le haut
   const [activeTab, setActiveTab] = useState("langues"); // Onglet par défaut
+  const [theme, setTheme] = useState("light");
 
   // Hook pour détecter le défilement et ajuster la direction
   useEffect(() => {
@@ -35,6 +36,17 @@ export default function Home() {
     };
   }, []);
 
+  useEffect(() => {
+    const savedTheme = window.localStorage.getItem("theme");
+    if (savedTheme === "dark" || savedTheme === "light") {
+      setTheme(savedTheme);
+    }
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem("theme", theme);
+  }, [theme]);
+
   return (
     <>
       <Head>
@@ -43,6 +55,8 @@ export default function Home() {
         <meta name="keywords" content="Kenza HALIL, informatique, alternance, développement, web, Python, PHP, Next.js" />
         <meta name="author" content="Kenza HALIL" />
       </Head>
+
+      <div className={`theme-${theme}`}>
 
       <header className="hero">
         <nav className={`navbar ${scrollDirection === 'down' ? 'hide' : ''}`}>
@@ -66,6 +80,14 @@ export default function Home() {
     🇬🇧
   </button>
 </li>
+            <li>
+              <button
+                className="theme-button"
+                onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+              >
+                {theme === "light" ? "🌙" : "☀️"}
+              </button>
+            </li>
           </ul>
         </nav>
         <div className="hero-content">
@@ -696,6 +718,8 @@ export default function Home() {
             </div>
         </footer>
 
+        </div>
+
 
 
         <style jsx global>{`
@@ -710,6 +734,15 @@ export default function Home() {
   .navbar .nav-links li a:hover {
     color: #0070f3; /* Change la couleur au survol */
     transform: scale(1.05); /* Effet de zoom léger au survol */
+  }
+
+  .theme-dark .navbar .nav-links li a,
+  .theme-dark .navbar .nav-links li a:visited {
+    color: #f2f2f2 !important;
+  }
+
+  .theme-dark .navbar .nav-links li a:hover {
+    color: #9dc4ff !important;
   }
 `}</style>
       <style jsx>{`
@@ -728,6 +761,19 @@ export default function Home() {
 .lang-button:hover {
   color: #0070f3; /* Change la couleur au survol */
   transform: scale(1.05); /* Effet de zoom léger au survol */
+}
+
+.theme-button {
+  background-color: transparent;
+  border: none;
+  color: #111;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.theme-button:hover {
+  transform: scale(1.08);
 }
         .hero {
           height: 100vh;
@@ -1889,8 +1935,8 @@ ul li strong {
 }
 
 .project-card.featured {
-  max-width: 380px;
-  height: 430px;
+  max-width: 350px;
+  height: 400px;
   position: relative;
 }
 
@@ -2165,6 +2211,95 @@ h3::after {
 
 h3:hover::after {
   width: 70px; /* Augmente la largeur au survol */
+}
+
+/* Mode sombre */
+.theme-dark {
+  background-color: #202a38;
+  color: #f3f6fb;
+}
+
+.theme-dark section,
+.theme-dark .presentation,
+.theme-dark .diplomes,
+.theme-dark .projets,
+.theme-dark .references,
+.theme-dark .contact,
+.theme-dark .cv,
+.theme-dark .expériences,
+.theme-dark .veille,
+.theme-dark #cv {
+  background: #2a3648 !important;
+}
+
+.theme-dark .navbar {
+  background-color: rgba(40, 52, 70, 0.9);
+}
+
+.theme-dark .logo,
+.theme-dark .navbar .nav-links li a,
+.theme-dark .lang-button,
+.theme-dark .theme-button {
+  color: #f2f2f2 !important;
+}
+
+.theme-dark .navbar .nav-links li a:hover {
+  color: #9dc4ff !important;
+}
+
+.theme-dark .hero-content {
+  background-color: rgba(24, 32, 44, 0.85);
+}
+
+.theme-dark .hero-content h1,
+.theme-dark .hero-content p {
+  color: #f3f6fb;
+}
+
+.theme-dark .texte,
+.theme-dark .column,
+.theme-dark .timeline-content,
+.theme-dark .tab-content,
+.theme-dark .tab-content ul li,
+.theme-dark .reference-card,
+.theme-dark .veille-card,
+.theme-dark .card-front,
+.theme-dark .card-back,
+.theme-dark .skill-item,
+.theme-dark .icon-button,
+.theme-dark .tab-button {
+  background-color: #3a4a61 !important;
+  color: #f3f6fb !important;
+}
+
+.theme-dark .tab-button {
+  border-color: #607089;
+}
+
+.theme-dark .timeline::before,
+.theme-dark .timeline-dot,
+.theme-dark h2::after,
+.theme-dark h3::after {
+  background: #6ea8ff;
+}
+
+.theme-dark .footer {
+  background-color: #2a3648;
+}
+
+.theme-dark .footer p,
+.theme-dark .tab-content ul li,
+.theme-dark .veille-card p,
+.theme-dark .reference-card p,
+.theme-dark .contact p,
+.theme-dark .card-back p,
+.theme-dark .card-back span,
+.theme-dark .timeline-content p,
+.theme-dark .timeline-content span,
+.theme-dark h2,
+.theme-dark h3,
+.theme-dark .flag {
+  color: #f3f6fb !important;
 }
 
 

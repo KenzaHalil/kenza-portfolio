@@ -1,15 +1,45 @@
 
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import Link from "next/link";
 
 export default function Home() {
 
   const [showVelibVideo, setShowVelibVideo] = useState(false);
+  const [showIAVideo, setShowIAVideo] = useState(false);
   const [scrollDirection, setScrollDirection] = useState('up'); // Initialement vers le haut
   const [activeTab, setActiveTab] = useState("langues"); // Onglet par défaut
   const [theme, setTheme] = useState("light");
+  const iaVideoRef = useRef<HTMLVideoElement>(null);
+  const velibVideoRef = useRef<HTMLVideoElement>(null);
+
+  const openVideoInFullscreen = async (video: HTMLVideoElement | null) => {
+    if (!video) return;
+
+    try {
+      if (document.fullscreenElement !== video) {
+        await video.requestFullscreen();
+      }
+      await video.play();
+    } catch (error) {
+      console.error("Impossible d'ouvrir la vidéo en plein écran.", error);
+    }
+  };
+
+  const handleOpenIAVideo = () => {
+    setShowIAVideo(true);
+    window.setTimeout(() => {
+      openVideoInFullscreen(iaVideoRef.current);
+    }, 80);
+  };
+
+  const handleOpenVelibVideo = () => {
+    setShowVelibVideo(true);
+    window.setTimeout(() => {
+      openVideoInFullscreen(velibVideoRef.current);
+    }, 80);
+  };
 
   // Hook pour détecter le défilement et ajuster la direction
   useEffect(() => {
@@ -46,6 +76,32 @@ export default function Home() {
   useEffect(() => {
     window.localStorage.setItem("theme", theme);
   }, [theme]);
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      const fullscreenElement = document.fullscreenElement;
+
+      const iaVideo = iaVideoRef.current;
+      if (showIAVideo && iaVideo && fullscreenElement !== iaVideo) {
+        iaVideo.pause();
+        iaVideo.currentTime = 0;
+        setShowIAVideo(false);
+      }
+
+      const velibVideo = velibVideoRef.current;
+      if (showVelibVideo && velibVideo && fullscreenElement !== velibVideo) {
+        velibVideo.pause();
+        velibVideo.currentTime = 0;
+        setShowVelibVideo(false);
+      }
+    };
+
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+
+    return () => {
+      document.removeEventListener("fullscreenchange", handleFullscreenChange);
+    };
+  }, [showIAVideo, showVelibVideo]);
 
   return (
     <>
@@ -92,7 +148,8 @@ export default function Home() {
         </nav>
         <div className="hero-content">
           <h1>Kenza HALIL</h1>
-          <p><strong>Étudiante en troisième année de BUT Informatique en alternance</strong></p>
+          <p><strong>Future ingénieure à CY Tech (admise pour la prochaine rentrée)</strong></p>
+          <p><strong>À la recherche d’une alternance en informatique à partir de septembre</strong></p>
           <p><strong>“Code ton futur avec passion & détermination!”</strong></p>
         </div>
       </header>
@@ -108,7 +165,7 @@ export default function Home() {
                 </div>
                 <div className="texte">
                 <p>
-                    Bonjour, je m’appelle Kenza HALIL. Étudiante en troisième année de BUT Informatique à l’IUT de Villetaneuse – Université Sorbonne Paris Nord, je réalise actuellement une alternance de 12 mois à CY Cergy Paris Université. Passionnée par l’informatique et le développement, je m’investis pleinement dans des projets visant à renforcer mes compétences techniques, tout en développant une approche rigoureuse et professionnelle du monde du numérique.
+                  Bonjour, je m’appelle Kenza HALIL. Étudiante en troisième année de BUT Informatique à l’IUT de Villetaneuse – Université Sorbonne Paris Nord, je réalise actuellement une alternance de 12 mois à CY Cergy Paris Université. Je suis également admise à l’école d’ingénieurs CY Tech pour la prochaine rentrée et je suis à la recherche d’une alternance en informatique à partir de septembre. Passionnée par l’informatique et le développement, je m’investis pleinement dans des projets visant à renforcer mes compétences techniques, tout en développant une approche rigoureuse et professionnelle du monde du numérique.
                 </p>
                 <p>
                     Au cours de mes études, j'ai acquis une solide maîtrise des langages de programmation tels que Python, PHP, JavaScript, ainsi que des technologies web comme HTML, CSS, et jQuery. J’ai également travaillé sur des projets de développement backend, impliquant la conception et la gestion de bases de données relationnelles (SQL, PostgreSQL), ainsi que sur le développement d’interfaces front-end. Par ailleurs, j’ai participé à un projet de développement d’application mobile intégrant des modèles d’intelligence artificielle, visant à analyser des caractéristiques telles que l’âge, l’ethnie et le genre à partir de données visuelles
@@ -249,7 +306,7 @@ export default function Home() {
   <div className="content">
     <h2>Mes Projets</h2>
     <div className="project-grid">
-      {/* Projet IA mis en avant */}
+      {/* Projet IA */}
       <div className="project-card featured">
         <div className="card-front">
           <img src="/images/IA.jpg" alt="Application mobile d’analyse par intelligence artificielle" />
@@ -262,6 +319,18 @@ export default function Home() {
             Application mobile permettant l’analyse d’une image afin d’estimer automatiquement des caractéristiques telles que l’âge, le genre et l’ethnicité probable d’une personne.
             Le projet s’appuie sur l’utilisation de réseaux de neurones convolutifs (CNN), avec la mise en place de quatre modèles distincts : un modèle dédié à la prédiction de l’âge, un modèle pour le genre, un modèle pour l’ethnicité, ainsi qu’un modèle global visant à centraliser et harmoniser les prédictions. Une attention particulière est portée à l’optimisation des performances et à l’expérience utilisateur sur mobile.
           </p>
+
+          <button className="btn" onClick={handleOpenIAVideo}>
+            Voir la démo
+          </button>
+          {showIAVideo && (
+            <div style={{ marginTop: "15px" }}>
+              <video ref={iaVideoRef} width="100%" controls>
+                <source src="/videos/ia-demo.mp4" type="video/mp4" />
+                Votre navigateur ne supporte pas la vidéo.
+              </video>
+            </div>
+          )}
 
           <a href="https://github.com/KenzaHalil/Projet_IA_Face" target="_blank" rel="noopener noreferrer" className="btn">Code GitHub</a>
           <a href="/pdf/rapport-ia.pdf" download className="btn">Télécharger le rapport</a>
@@ -281,12 +350,12 @@ export default function Home() {
           </p>
           <a href="https://github.com/KenzaHalil/Velib" target="_blank" rel="noopener noreferrer" className="btn">Application web</a>
           <a href="https://github.com/KenzaHalil/Velib_mobile" target="_blank" rel="noopener noreferrer" className="btn">Application mobile</a>
-          <button className="btn" onClick={() => setShowVelibVideo(!showVelibVideo)}>
-            {showVelibVideo ? "Masquer la vidéo" : "Voir la vidéo"}
+          <button className="btn" onClick={handleOpenVelibVideo}>
+            Voir la vidéo
           </button>
           {showVelibVideo && (
             <div style={{ marginTop: "15px" }}>
-              <video width="100%" controls>
+              <video ref={velibVideoRef} width="100%" controls>
                 <source src="/videos/velib-demo.mp4" type="video/mp4" />
                 Votre navigateur ne supporte pas la vidéo.
               </video>
@@ -442,6 +511,22 @@ export default function Home() {
           <p>Développement d'une application web pour la gestion de recrutement</p>
           <a href="https://www.arimayi.fr/" target="_blank" rel="noopener noreferrer" className="btn-mauve">ARIMAYI</a>
           <a href="/pdf/rapport_stage.pdf" download="Rapport_Stage" className="btn">Télécharger le rapport</a>
+        </div>
+      </div>
+
+      {/* Expérience : Interview IUT */}
+      <div className="experience-card">
+        <div className="card-front">
+          <img src="/images/iut.jpg" alt="Interview Les Elles de l'Info" />
+          <h3>Interview « Les Elles de l’Info »</h3>
+        </div>
+        <div className="card-back">
+          <h3>Participation à une interview à l’IUT</h3>
+          <span>Initiative « Les Elles de l’Info »</span>
+          <p>
+            J’ai participé, avec 2 camarades de ma promotion, à une vidéo au format interview pour parler de la place des femmes dans les métiers de l’informatique,
+            partager nos parcours et encourager davantage de jeunes filles à s’orienter vers le numérique.
+          </p>
         </div>
       </div>
 
@@ -682,7 +767,7 @@ export default function Home() {
       <section id="cv" className="cv">
         <div className="content">
             <h2>Mon CV</h2>
-            <p>Je suis à la recherche d’une alternance en informatique pour une durée de 12 mois, avec un rythme de deux semaines en entreprise et deux semaines à l’IUT afin de mettre en pratique mes compétences et intégrer un monde professionnel tôt et en parallèle avec les études. Je souhaite travailler dans une entreprise qui valorise les compétences des débutants dans ce domaine.</p>
+            <p>Future ingénieure admise à CY Tech, je suis à la recherche d’une alternance en informatique à partir de septembre. Mon objectif est d’intégrer une entreprise où je pourrai mettre en pratique mes compétences techniques, continuer à apprendre sur des projets concrets et contribuer avec rigueur et motivation.</p>
             <p>Téléchargez mon CV</p>
             <div className="cv-links">
             <a href="/pdf/Kenza_HALIL_CV_FR.pdf" download="Mon_CV_France" className="btn">Télécharger le CV (Français)</a>

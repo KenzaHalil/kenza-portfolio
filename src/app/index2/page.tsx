@@ -1,12 +1,43 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import Link from "next/link";
 
 export default function Home() {
   const [showVelibVideo, setShowVelibVideo] = useState(false);
+  const [showIAVideo, setShowIAVideo] = useState(false);
   const [scrollDirection, setScrollDirection] = useState('up'); // Initially scrolling up
   const [activeTab, setActiveTab] = useState("languages"); // Default tab
+  const [theme, setTheme] = useState("light");
+  const iaVideoRef = useRef<HTMLVideoElement>(null);
+  const velibVideoRef = useRef<HTMLVideoElement>(null);
+
+  const openVideoInFullscreen = async (video: HTMLVideoElement | null) => {
+    if (!video) return;
+
+    try {
+      if (document.fullscreenElement !== video) {
+        await video.requestFullscreen();
+      }
+      await video.play();
+    } catch (error) {
+      console.error("Unable to open video in fullscreen.", error);
+    }
+  };
+
+  const handleOpenIAVideo = () => {
+    setShowIAVideo(true);
+    window.setTimeout(() => {
+      openVideoInFullscreen(iaVideoRef.current);
+    }, 80);
+  };
+
+  const handleOpenVelibVideo = () => {
+    setShowVelibVideo(true);
+    window.setTimeout(() => {
+      openVideoInFullscreen(velibVideoRef.current);
+    }, 80);
+  };
 
   // Hook to detect scrolling and adjust direction
   useEffect(() => {
@@ -33,6 +64,43 @@ export default function Home() {
     };
   }, []);
 
+  useEffect(() => {
+    const savedTheme = window.localStorage.getItem("theme");
+    if (savedTheme === "dark" || savedTheme === "light") {
+      setTheme(savedTheme);
+    }
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      const fullscreenElement = document.fullscreenElement;
+
+      const iaVideo = iaVideoRef.current;
+      if (showIAVideo && iaVideo && fullscreenElement !== iaVideo) {
+        iaVideo.pause();
+        iaVideo.currentTime = 0;
+        setShowIAVideo(false);
+      }
+
+      const velibVideo = velibVideoRef.current;
+      if (showVelibVideo && velibVideo && fullscreenElement !== velibVideo) {
+        velibVideo.pause();
+        velibVideo.currentTime = 0;
+        setShowVelibVideo(false);
+      }
+    };
+
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+
+    return () => {
+      document.removeEventListener("fullscreenchange", handleFullscreenChange);
+    };
+  }, [showIAVideo, showVelibVideo]);
+
   return (
     <>
       <Head>
@@ -42,19 +110,21 @@ export default function Home() {
         <meta name="author" content="Kenza HALIL" />
       </Head>
 
+      <div className={`theme-${theme}`}>
+
       <header className="hero">
         <nav className={`navbar ${scrollDirection === 'down' ? 'hide' : ''}`}>
           <a href="#top" className="logo">KH</a>
           <ul className="nav-links">
             <li><Link href="#presentation">About</Link></li>
-            <li><Link href="#skills">Skills</Link></li>
-            <li><Link href="#education">Education</Link></li>
+            <li><Link href="#competences">Skills</Link></li>
+            <li><Link href="#diplomes">Education</Link></li>
             <li><Link href="#projects">Projects</Link></li>
             <li><Link href="#experiences">Experiences</Link></li>
-            <li><Link href="#tech-watch">Tech-Watch</Link></li>
+            <li><Link href="#veille">Tech-Watch</Link></li>
             <li><Link href="#other">Other</Link></li>
             <li><Link href="#references">References</Link></li>
-            <li><Link href="#resume">Resume</Link></li>
+            <li><Link href="#cv">Resume</Link></li>
             <li><Link href="#contact">Contact</Link></li>
             <li>
               <button 
@@ -64,11 +134,20 @@ export default function Home() {
                 🇫🇷
               </button>
             </li>
+            <li>
+              <button
+                className="theme-button"
+                onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+              >
+                {theme === "light" ? "🌙" : "☀️"}
+              </button>
+            </li>
           </ul>
         </nav>
         <div className="hero-content">
           <h1>Kenza HALIL</h1>
-          <p><strong>Computer Science Student</strong></p>
+          <p><strong>Future Engineer at CY Tech – admitted for the next academic year</strong></p>
+          <p><strong>Looking for a work-study apprenticeship in Computer Science starting September</strong></p>
           <p><strong>“Code your future with passion & determination!”</strong></p>
         </div>
       </header>
@@ -84,7 +163,7 @@ export default function Home() {
         </div>
         <div className="texte">
           <p>
-            Hello, my name is Kenza HALIL. I am currently a third-year student in a Bachelor of Computer Science at IUT Villetaneuse – Sorbonne Paris North University, and I am completing a 12-month apprenticeship at CY Cergy Paris University. Passionate about computer science and development, I am fully committed to projects aimed at strengthening my technical skills while developing a rigorous and professional approach to the digital world.
+            Hello, my name is Kenza HALIL. I am currently a third-year student in a Bachelor of Computer Science at IUT Villetaneuse – Sorbonne Paris North University, and I am completing a 12-month apprenticeship at CY Cergy Paris University. I am also admitted to CY Tech engineering school for the next academic year and I am looking for a work-study apprenticeship in Computer Science starting in September. Passionate about computer science and development, I am fully committed to projects aimed at strengthening my technical skills while developing a rigorous and professional approach to the digital world.
           </p>
           <p>
             During my studies, I have gained solid expertise in programming languages such as Python, PHP, and JavaScript, as well as web technologies like HTML, CSS, and jQuery. I have also worked on backend development projects involving the design and management of relational databases (SQL, PostgreSQL), as well as front-end interface development. Additionally, I participated in a mobile application development project integrating artificial intelligence models to analyze characteristics such as age, ethnicity, and gender from visual data.
@@ -235,9 +314,20 @@ export default function Home() {
             The project relies on the use of convolutional neural networks (CNN), with the implementation of four distinct models: one dedicated to age prediction, one for gender, one for ethnicity, and a global model to centralize and harmonize predictions. Particular attention is paid to performance optimization and mobile user experience.
           </p>
 
+          <button className="btn" onClick={handleOpenIAVideo}>
+            Watch demo
+          </button>
+          {showIAVideo && (
+            <div style={{ marginTop: "15px" }}>
+              <video ref={iaVideoRef} width="100%" controls>
+                <source src="/videos/ia-demo.mp4" type="video/mp4" />
+                Your browser does not support this video.
+              </video>
+            </div>
+          )}
+
           <a href="https://github.com/KenzaHalil/Projet_IA_Face" target="_blank" rel="noopener noreferrer" className="btn">GitHub Code</a>
           <a href="/pdf/rapport-ia.pdf" download className="btn">Download Report</a>
-          <a href="#contact" className="btn">Discuss the project</a>
         </div>
       </div>
 
@@ -252,14 +342,14 @@ export default function Home() {
           <p>As part of a university project, I developed a Vélib' station management web and mobile application with my team. It allows users to locate available stations in real-time, check available bikes and slots, simulate reservations, and track usage history. The project uses open data, a REST API, and was designed with a modular software architecture. I applied UML modeling and the TDD (Test Driven Development) method to ensure code quality and reliability.</p>
           <a href="https://github.com/KenzaHalil/Velib" target="_blank" rel="noopener noreferrer" className="btn">Web app</a>
           <a href="https://github.com/KenzaHalil/Velib_mobile" target="_blank" rel="noopener noreferrer" className="btn">Mobile app</a>
-          <button className="btn" onClick={() => setShowVelibVideo(!showVelibVideo)}>
-            {showVelibVideo ? "Masquer la vidéo" : "Voir la vidéo"}
+          <button className="btn" onClick={handleOpenVelibVideo}>
+            Watch video
           </button>
           {showVelibVideo && (
             <div style={{ marginTop: "15px" }}>
-              <video width="100%" controls>
+              <video ref={velibVideoRef} width="100%" controls>
                 <source src="/videos/velib-demo.mp4" type="video/mp4" />
-                Votre navigateur ne supporte pas la vidéo.
+                Your browser does not support this video.
               </video>
             </div>
           )}
@@ -411,6 +501,22 @@ export default function Home() {
           <p>Developed a web application for recruitment management.</p>
           <a href="https://www.arimayi.fr/" target="_blank" rel="noopener noreferrer" className="btn-mauve">ARIMAYI</a>
           <a href="/pdf/rapport_stage.pdf" download="Internship_Report" className="btn">Download Report</a>
+        </div>
+      </div>
+
+      {/* Experience 3: Interview "Les Elles de l'Info" */}
+      <div className="experience-card">
+        <div className="card-front">
+          <img src="/images/iut.jpg" alt="Interview Les Elles de l'Info" />
+          <h3>Interview “Les Elles de l’Info”</h3>
+        </div>
+        <div className="card-back">
+          <h3>Interview at IUT Villetaneuse</h3>
+          <span>Initiative “Les Elles de l’Info”</span>
+          <p>
+            I took part, with two classmates from my program, in an interview video about women’s place in tech careers,
+            sharing our experiences and encouraging more young women to pursue digital and computer science fields.
+          </p>
         </div>
       </div>
 
@@ -632,6 +738,21 @@ export default function Home() {
           </a>
         </div>
       </div>
+
+      {/* Reference 3 */}
+      <div className="reference-card">
+        <img src="/images/person3.jpg" alt="Martial Dubois" className="reference-photo" />
+        <h3>Martial Dubois</h3>
+        <p>Gargantua Project Manager at CY Cergy Paris University</p>
+        <div className="reference-buttons">
+          <a href="mailto:martial.dubois@cyu.fr" className="icon-button" target="_blank" rel="noopener noreferrer">
+            <img src="/icons/email.svg" alt="Email" />
+          </a>
+          <a href="https://www.linkedin.com/in/martialdubois/" className="icon-button" target="_blank" rel="noopener noreferrer">
+            <img src="/icons/linkedin.svg" alt="LinkedIn" />
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -639,7 +760,7 @@ export default function Home() {
 <section id="cv" className="cv">
   <div className="content">
     <h2>My Resume</h2>
-    <p>I am looking for a 12-month apprenticeship in computer science, with a schedule of two weeks in the company and two weeks at IUT. This will allow me to apply my skills and integrate into the professional world early while continuing my studies. I aim to work in a company that values the skills of beginners in this field.</p>
+    <p>As a future engineer admitted to CY Tech, I am looking for a work-study apprenticeship in Computer Science starting in September. My objective is to join a company where I can apply my technical skills, continue learning in real-world projects, and contribute with rigor and motivation.</p>
     <p>Download my resume</p>
     <div className="cv-links">
       <a href="/pdf/Kenza_HALIL_CV_FR.pdf" download="My_CV_French" className="btn">Download Resume (French)</a>
@@ -675,6 +796,8 @@ export default function Home() {
       </div>
     </footer>
 
+    </div>
+
 
 
         <style jsx global>{`
@@ -689,6 +812,15 @@ export default function Home() {
   .navbar .nav-links li a:hover {
     color: #0070f3; /* Change la couleur au survol */
     transform: scale(1.05); /* Effet de zoom léger au survol */
+  }
+
+  .theme-dark .navbar .nav-links li a,
+  .theme-dark .navbar .nav-links li a:visited {
+    color: #f2f2f2 !important;
+  }
+
+  .theme-dark .navbar .nav-links li a:hover {
+    color: #9dc4ff !important;
   }
 `}</style>
       <style jsx>{`
@@ -707,6 +839,19 @@ export default function Home() {
 .lang-button:hover {
   color: #0070f3; /* Change la couleur au survol */
   transform: scale(1.05); /* Effet de zoom léger au survol */
+}
+
+.theme-button {
+  background-color: transparent;
+  border: none;
+  color: #111;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.theme-button:hover {
+  transform: scale(1.08);
 }
         .hero {
           height: 100vh;
@@ -1868,8 +2013,8 @@ ul li strong {
 }
 
 .project-card.featured {
-  max-width: 380px;
-  height: 430px;
+  max-width: 350px;
+  height: 400px;
   position: relative;
 }
 
@@ -2144,6 +2289,95 @@ h3::after {
 
 h3:hover::after {
   width: 70px; /* Augmente la largeur au survol */
+}
+
+/* Dark mode */
+.theme-dark {
+  background-color: #202a38;
+  color: #f3f6fb;
+}
+
+.theme-dark section,
+.theme-dark .presentation,
+.theme-dark .diplomes,
+.theme-dark .projets,
+.theme-dark .references,
+.theme-dark .contact,
+.theme-dark .cv,
+.theme-dark .experiences,
+.theme-dark .veille,
+.theme-dark #cv {
+  background: #2a3648 !important;
+}
+
+.theme-dark .navbar {
+  background-color: rgba(40, 52, 70, 0.9);
+}
+
+.theme-dark .logo,
+.theme-dark .navbar .nav-links li a,
+.theme-dark .lang-button,
+.theme-dark .theme-button {
+  color: #f2f2f2 !important;
+}
+
+.theme-dark .navbar .nav-links li a:hover {
+  color: #9dc4ff !important;
+}
+
+.theme-dark .hero-content {
+  background-color: rgba(24, 32, 44, 0.85);
+}
+
+.theme-dark .hero-content h1,
+.theme-dark .hero-content p {
+  color: #f3f6fb;
+}
+
+.theme-dark .texte,
+.theme-dark .column,
+.theme-dark .timeline-content,
+.theme-dark .tab-content,
+.theme-dark .tab-content ul li,
+.theme-dark .reference-card,
+.theme-dark .veille-card,
+.theme-dark .card-front,
+.theme-dark .card-back,
+.theme-dark .skill-item,
+.theme-dark .icon-button,
+.theme-dark .tab-button {
+  background-color: #3a4a61 !important;
+  color: #f3f6fb !important;
+}
+
+.theme-dark .tab-button {
+  border-color: #607089;
+}
+
+.theme-dark .timeline::before,
+.theme-dark .timeline-dot,
+.theme-dark h2::after,
+.theme-dark h3::after {
+  background: #6ea8ff;
+}
+
+.theme-dark .footer {
+  background-color: #2a3648;
+}
+
+.theme-dark .footer p,
+.theme-dark .tab-content ul li,
+.theme-dark .veille-card p,
+.theme-dark .reference-card p,
+.theme-dark .contact p,
+.theme-dark .card-back p,
+.theme-dark .card-back span,
+.theme-dark .timeline-content p,
+.theme-dark .timeline-content span,
+.theme-dark h2,
+.theme-dark h3,
+.theme-dark .flag {
+  color: #f3f6fb !important;
 }
 
 

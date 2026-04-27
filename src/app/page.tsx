@@ -282,7 +282,7 @@ export default function Home() {
                         <img src="/images/lycee.jpg" alt="Lycée Les trois frères SI-BACHIR" />
                     </div>
                     <h3>Baccalauréat Scientifique</h3>
-                    <span>2022</span>
+                    <span>2023</span>
                     <p>Mention Très-Bien (16.78) – Lycée Les trois frères SI-BACHIR - Algérie</p>
                 </div>
                 </div>

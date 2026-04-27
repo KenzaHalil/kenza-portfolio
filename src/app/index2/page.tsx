@@ -277,7 +277,7 @@ export default function Home() {
           <img src="/images/lycee.jpg" alt="Lycée Les Trois Frères SI-BACHIR" />
         </div>
         <h3>Scientific Baccalaureate</h3>
-        <span>2022</span>
+        <span>2023</span>
         <p>Graduated with honors (16.78) – Lycée Les Trois Frères SI-BACHIR - Algeria</p>
       </div>
     </div>

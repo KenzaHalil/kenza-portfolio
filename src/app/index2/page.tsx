@@ -258,6 +258,18 @@ export default function Home() {
         <section className="diplomes" id="diplomes">
   <h2>Education</h2>
   <div className="timeline">
+    <div className="timeline-item right">
+      <div className="timeline-dot"></div>
+      <div className="timeline-content">
+        <div className="formation-image">
+          <img src="/images/cytech.jpg" alt="CY Tech Cergy" />
+        </div>
+        <h3>Computer Science Engineering Degree (Apprenticeship) – AI Specialization in 3rd year</h3>
+        <span>Sept. 2026 - 2029</span>
+        <p>CY Tech – Cergy</p>
+      </div>
+    </div>
+
     <div className="timeline-item left">
       <div className="timeline-dot"></div>
       <div className="timeline-content">

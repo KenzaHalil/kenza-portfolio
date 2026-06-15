@@ -483,6 +483,20 @@ export default function Home() {
           <p>Configuration de serveurs LAMP et conception de réseaux TCP/IP.</p>
         </div>
       </div>
+
+      {/* Projet 11 : Bot d'annonces de logement */}
+      <div className="project-card">
+        <div className="card-front">
+          <img src="/images/housing.jpg" alt="Bot d'annonces de logement étudiant" />
+          <h3>Bot d'annonces de logement</h3>
+        </div>
+        <div className="card-back">
+          <p>
+            Bot Python de scraping automatique d'annonces immobilières permettant de trouver des chambres étudiantes, studios et logements à 500 € maximum dans des villes comme La Défense, Courbevoie, Nanterre et les communes environnantes. Le bot agrège les annonces et les filtre selon les critères de prix et de localisation.
+          </p>
+          <a href="https://github.com/KenzaHalil/housing_bot_annonces" target="_blank" rel="noopener noreferrer" className="btn">Voir sur GitHub</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>

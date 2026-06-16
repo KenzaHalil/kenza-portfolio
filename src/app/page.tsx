@@ -497,6 +497,27 @@ export default function Home() {
           <a href="https://github.com/KenzaHalil/housing_bot_annonces" target="_blank" rel="noopener noreferrer" className="btn">Voir sur GitHub</a>
         </div>
       </div>
+
+      {/* Projet 12 : TransportsChatbot */}
+      <div className="project-card">
+        <div className="card-front">
+          <img src="/images/chatbot.jpg" alt="Chatbot transports en commun" />
+          <h3>TransportsChatbot</h3>
+        </div>
+        <div className="card-back">
+          <p>
+            Chatbot web spécialisé dans les transports en commun français (SNCF et Île-de-France Mobilités). L'utilisateur peut se connecter, créer des conversations et poser des questions sur les tarifs, l'accessibilité, les équipements et la fréquentation des gares.
+          </p>
+          <p style={{ fontSize: "0.85rem", color: "#555", marginTop: "8px" }}>
+            <strong>Frontend :</strong> React, Vite, react-markdown &nbsp;|&nbsp;
+            <strong>Backend :</strong> Flask, SQLAlchemy, bcrypt &nbsp;|&nbsp;
+            <strong>LLM :</strong> OpenRouter &nbsp;|&nbsp;
+            <strong>RAG :</strong> ChromaDB + sentence-transformers &nbsp;|&nbsp;
+            <strong>BDD :</strong> SQLite &nbsp;|&nbsp;
+            <strong>Données :</strong> Open data SNCF &amp; IDFM
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </section>

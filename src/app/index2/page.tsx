@@ -478,7 +478,7 @@ export default function Home() {
       {/* Project 11: Housing Listings Bot */}
       <div className="project-card">
         <div className="card-front">
-          <img src="/images/web-dev.jpg" alt="Housing listings bot for students" />
+          <img src="/images/housing.jpg" alt="Housing listings bot for students" />
           <h3>Housing Listings Bot</h3>
         </div>
         <div className="card-back">
@@ -486,6 +486,27 @@ export default function Home() {
             Python scraping bot that automatically finds housing listings — student rooms, studios, and apartments priced under €500 — in cities such as La Défense, Courbevoie, Nanterre, and surrounding areas. The bot aggregates and filters listings based on price and location criteria.
           </p>
           <a href="https://github.com/KenzaHalil/housing_bot_annonces" target="_blank" rel="noopener noreferrer" className="btn">View on GitHub</a>
+        </div>
+      </div>
+
+      {/* Project 12: TransportsChatbot */}
+      <div className="project-card">
+        <div className="card-front">
+          <img src="/images/chatbot.jpg" alt="French public transport chatbot" />
+          <h3>TransportsChatbot</h3>
+        </div>
+        <div className="card-back">
+          <p>
+            Web chatbot specializing in French public transport (SNCF and Île-de-France Mobilités). Users can log in, create conversations, and ask questions about fares, accessibility, facilities, and station attendance.
+          </p>
+          <p style={{ fontSize: "0.85rem", color: "#555", marginTop: "8px" }}>
+            <strong>Frontend:</strong> React, Vite, react-markdown &nbsp;|&nbsp;
+            <strong>Backend:</strong> Flask, SQLAlchemy, bcrypt &nbsp;|&nbsp;
+            <strong>LLM:</strong> OpenRouter &nbsp;|&nbsp;
+            <strong>RAG:</strong> ChromaDB + sentence-transformers &nbsp;|&nbsp;
+            <strong>DB:</strong> SQLite &nbsp;|&nbsp;
+            <strong>Data:</strong> SNCF &amp; IDFM open data
+          </p>
         </div>
       </div>
   </div>

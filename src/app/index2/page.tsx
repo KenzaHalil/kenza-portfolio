@@ -720,6 +720,10 @@ export default function Home() {
           <p><strong>Arabic</strong><br />Bilingual</p>
         </div>
       </div>
+      <div style={{ textAlign: "center", marginTop: "20px" }}>
+        <p><strong>CLES Certification</strong> – English B2 Level</p>
+        <a href="/pdf/CLES.pdf" download="CLES" className="btn" style={{ fontSize: "0.9rem" }}>Download certificate</a>
+      </div>
     </div>
 
     <div className={`tab-content ${activeTab === "soft-skills" ? "active" : "hidden"}`} id="soft-skills">

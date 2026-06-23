@@ -730,6 +730,10 @@ export default function Home() {
                 <p><strong>Arabe</strong><br />Bilingue</p>
               </div>
             </div>
+            <div style={{ textAlign: "center", marginTop: "20px" }}>
+              <p><strong>Certification CLES</strong> – Anglais Niveau B2</p>
+              <a href="/pdf/CLES.pdf" download="CLES" className="btn" style={{ fontSize: "0.9rem" }}>Télécharger le certificat</a>
+            </div>
           </div>
           <div className={`tab-content ${activeTab === "soft-skills" ? "active" : "hidden"}`} id="soft-skills">
             <h3>Soft Skills</h3>

@@ -129,11 +129,11 @@ export default function Home() {
             <li><Link href="#cv">CV</Link></li>
             <li><Link href="#contact">contact</Link></li>
             <li>
-  <button 
-    className="lang-button" 
+  <button
+    className="lang-button"
     onClick={() => window.location.href = '/index2'}
   >
-    🇬🇧
+    <img src="/icons/uk.jpg" alt="English" style={{ width: "24px", height: "16px", borderRadius: "2px" }} />
   </button>
 </li>
             <li>
@@ -283,6 +283,10 @@ export default function Home() {
                     <h3>Troisième année de BUT Informatique en alternance (Première et deuxième années validées)</h3>
                     <span>2023 - en cours</span>
                     <p>Université Sorbonne Paris Nord – IUT de Villetaneuse</p>
+                    <div style={{ marginTop: "10px", display: "flex", gap: "10px", justifyContent: "center" }}>
+                      <a href="/pdf/DUT.pdf" target="_blank" rel="noopener noreferrer" className="btn" style={{ fontSize: "0.85rem" }}>Visualiser le DUT</a>
+                      <a href="/pdf/DUT.pdf" download="DUT" className="btn" style={{ fontSize: "0.85rem" }}>Télécharger le DUT</a>
+                    </div>
                 </div>
                 </div>
 
@@ -296,6 +300,10 @@ export default function Home() {
                     <h3>Baccalauréat Scientifique</h3>
                     <span>2023</span>
                     <p>Mention Très-Bien (16.78) – Lycée Les trois frères SI-BACHIR - Algérie</p>
+                    <div style={{ marginTop: "10px", display: "flex", gap: "10px", justifyContent: "center" }}>
+                      <a href="/pdf/BAC_Kenza.pdf" target="_blank" rel="noopener noreferrer" className="btn" style={{ fontSize: "0.85rem" }}>Visualiser le diplôme du BAC</a>
+                      <a href="/pdf/BAC_Kenza.pdf" download="BAC_Kenza" className="btn" style={{ fontSize: "0.85rem" }}>Télécharger le diplôme du BAC</a>
+                    </div>
                 </div>
                 </div>
 
@@ -350,7 +358,28 @@ export default function Home() {
       </div>
 
 
-      {/* Projet 1 : Application Vélib */}
+      {/* Projet : TransportsChatbot */}
+      <div className="project-card">
+        <div className="card-front">
+          <img src="/images/chatbot.jpg" alt="Chatbot transports en commun" />
+          <h3>TransportsChatbot</h3>
+        </div>
+        <div className="card-back">
+          <p>
+            Chatbot web spécialisé dans les transports en commun français (SNCF et Île-de-France Mobilités). L'utilisateur peut se connecter, créer des conversations et poser des questions sur les tarifs, l'accessibilité, les équipements et la fréquentation des gares.
+          </p>
+          <p style={{ fontSize: "0.85rem", color: "#555", marginTop: "8px" }}>
+            <strong>Frontend :</strong> React, Vite, react-markdown &nbsp;|&nbsp;
+            <strong>Backend :</strong> Flask, SQLAlchemy, bcrypt &nbsp;|&nbsp;
+            <strong>LLM :</strong> OpenRouter &nbsp;|&nbsp;
+            <strong>RAG :</strong> ChromaDB + sentence-transformers &nbsp;|&nbsp;
+            <strong>BDD :</strong> SQLite &nbsp;|&nbsp;
+            <strong>Données :</strong> Open data SNCF &amp; IDFM
+          </p>
+        </div>
+      </div>
+
+      {/* Projet : Application Vélib */}
       <div className="project-card">
         <div className="card-front">
           <img src="/images/velib.jpg" alt="Application Vélib" />
@@ -498,26 +527,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Projet 12 : TransportsChatbot */}
-      <div className="project-card">
-        <div className="card-front">
-          <img src="/images/chatbot.jpg" alt="Chatbot transports en commun" />
-          <h3>TransportsChatbot</h3>
-        </div>
-        <div className="card-back">
-          <p>
-            Chatbot web spécialisé dans les transports en commun français (SNCF et Île-de-France Mobilités). L'utilisateur peut se connecter, créer des conversations et poser des questions sur les tarifs, l'accessibilité, les équipements et la fréquentation des gares.
-          </p>
-          <p style={{ fontSize: "0.85rem", color: "#555", marginTop: "8px" }}>
-            <strong>Frontend :</strong> React, Vite, react-markdown &nbsp;|&nbsp;
-            <strong>Backend :</strong> Flask, SQLAlchemy, bcrypt &nbsp;|&nbsp;
-            <strong>LLM :</strong> OpenRouter &nbsp;|&nbsp;
-            <strong>RAG :</strong> ChromaDB + sentence-transformers &nbsp;|&nbsp;
-            <strong>BDD :</strong> SQLite &nbsp;|&nbsp;
-            <strong>Données :</strong> Open data SNCF &amp; IDFM
-          </p>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -732,7 +741,8 @@ export default function Home() {
             </div>
             <div style={{ textAlign: "center", marginTop: "20px" }}>
               <p><strong>Certification CLES</strong> – Anglais Niveau B2</p>
-              <a href="/pdf/CLES.pdf" download="CLES" className="btn" style={{ fontSize: "0.9rem" }}>Télécharger le certificat</a>
+              <a href="/pdf/CLES.pdf" target="_blank" rel="noopener noreferrer" className="btn" style={{ fontSize: "0.9rem" }}>Visualiser le certificat</a>
+              <a href="/pdf/CLES.pdf" download="CLES" className="btn" style={{ fontSize: "0.9rem", marginLeft: "10px" }}>Télécharger le certificat</a>
             </div>
           </div>
           <div className={`tab-content ${activeTab === "soft-skills" ? "active" : "hidden"}`} id="soft-skills">
@@ -821,8 +831,10 @@ export default function Home() {
             <p>Future ingénieure admise à CY Tech, je suis à la recherche d’une alternance en informatique à partir de septembre. Mon objectif est d’intégrer une entreprise où je pourrai mettre en pratique mes compétences techniques, continuer à apprendre sur des projets concrets et contribuer avec rigueur et motivation.</p>
             <p>Téléchargez mon CV</p>
             <div className="cv-links">
+            <a href="/pdf/Kenza_HALIL_CV_FR.pdf" target="_blank" rel="noopener noreferrer" className="btn">Visualiser le CV (Français)</a>
             <a href="/pdf/Kenza_HALIL_CV_FR.pdf" download="Mon_CV_France" className="btn">Télécharger le CV (Français)</a>
-            <a href="/pdf/Kenza_HALIL_CV_EN.pdf" download="My_CV_English" className="btn">Download CV (English)</a>
+            <a href="/pdf/Kenza_HALIL_CV_EN.pdf" target="_blank" rel="noopener noreferrer" className="btn">Visualiser le CV (English)</a>
+            <a href="/pdf/Kenza_HALIL_CV_EN.pdf" download="My_CV_English" className="btn" style={{ backgroundColor: "#007bff" }}>Download CV (English)</a>
             </div>
         </div>
        </section>

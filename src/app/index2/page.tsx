@@ -127,11 +127,11 @@ export default function Home() {
             <li><Link href="#cv">Resume</Link></li>
             <li><Link href="#contact">Contact</Link></li>
             <li>
-              <button 
-                className="lang-button" 
+              <button
+                className="lang-button"
                 onClick={() => window.location.href = '/'}
               >
-                🇫🇷
+                <img src="/icons/france.jpg" alt="Français" style={{ width: "24px", height: "16px", borderRadius: "2px" }} />
               </button>
             </li>
             <li>
@@ -279,6 +279,10 @@ export default function Home() {
         <h3>Third Year of Bachelor's in Computer Science (First and second Year Completed)</h3>
         <span>2023 - Present</span>
         <p>Sorbonne Paris North University – IUT of Villetaneuse</p>
+        <div style={{ marginTop: "10px", display: "flex", gap: "10px", justifyContent: "center" }}>
+          <a href="/pdf/DUT.pdf" target="_blank" rel="noopener noreferrer" className="btn" style={{ fontSize: "0.85rem" }}>View DUT</a>
+          <a href="/pdf/DUT.pdf" download="DUT" className="btn" style={{ fontSize: "0.85rem" }}>Download DUT</a>
+        </div>
       </div>
     </div>
 
@@ -291,6 +295,10 @@ export default function Home() {
         <h3>Scientific Baccalaureate</h3>
         <span>2023</span>
         <p>Graduated with honors (16.78) – Lycée Les Trois Frères SI-BACHIR - Algeria</p>
+        <div style={{ marginTop: "10px", display: "flex", gap: "10px", justifyContent: "center" }}>
+          <a href="/pdf/BAC_Kenza.pdf" target="_blank" rel="noopener noreferrer" className="btn" style={{ fontSize: "0.85rem" }}>View Baccalaureate diploma</a>
+          <a href="/pdf/BAC_Kenza.pdf" download="BAC_Kenza" className="btn" style={{ fontSize: "0.85rem" }}>Download Baccalaureate diploma</a>
+        </div>
       </div>
     </div>
 
@@ -344,7 +352,28 @@ export default function Home() {
       </div>
 
 
-      {/* Project 1: Vélib Application */}
+      {/* Project: TransportsChatbot */}
+      <div className="project-card">
+        <div className="card-front">
+          <img src="/images/chatbot.jpg" alt="French public transport chatbot" />
+          <h3>TransportsChatbot</h3>
+        </div>
+        <div className="card-back">
+          <p>
+            Web chatbot specializing in French public transport (SNCF and Île-de-France Mobilités). Users can log in, create conversations, and ask questions about fares, accessibility, facilities, and station attendance.
+          </p>
+          <p style={{ fontSize: "0.85rem", color: "#555", marginTop: "8px" }}>
+            <strong>Frontend:</strong> React, Vite, react-markdown &nbsp;|&nbsp;
+            <strong>Backend:</strong> Flask, SQLAlchemy, bcrypt &nbsp;|&nbsp;
+            <strong>LLM:</strong> OpenRouter &nbsp;|&nbsp;
+            <strong>RAG:</strong> ChromaDB + sentence-transformers &nbsp;|&nbsp;
+            <strong>DB:</strong> SQLite &nbsp;|&nbsp;
+            <strong>Data:</strong> SNCF &amp; IDFM open data
+          </p>
+        </div>
+      </div>
+
+      {/* Project: Vélib Application */}
       <div className="project-card">
         <div className="card-front">
           <img src="/images/velib.jpg" alt="Application Vélib" />
@@ -489,26 +518,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Project 12: TransportsChatbot */}
-      <div className="project-card">
-        <div className="card-front">
-          <img src="/images/chatbot.jpg" alt="French public transport chatbot" />
-          <h3>TransportsChatbot</h3>
-        </div>
-        <div className="card-back">
-          <p>
-            Web chatbot specializing in French public transport (SNCF and Île-de-France Mobilités). Users can log in, create conversations, and ask questions about fares, accessibility, facilities, and station attendance.
-          </p>
-          <p style={{ fontSize: "0.85rem", color: "#555", marginTop: "8px" }}>
-            <strong>Frontend:</strong> React, Vite, react-markdown &nbsp;|&nbsp;
-            <strong>Backend:</strong> Flask, SQLAlchemy, bcrypt &nbsp;|&nbsp;
-            <strong>LLM:</strong> OpenRouter &nbsp;|&nbsp;
-            <strong>RAG:</strong> ChromaDB + sentence-transformers &nbsp;|&nbsp;
-            <strong>DB:</strong> SQLite &nbsp;|&nbsp;
-            <strong>Data:</strong> SNCF &amp; IDFM open data
-          </p>
-        </div>
-      </div>
   </div>
   </div>
 </section>
@@ -722,7 +731,8 @@ export default function Home() {
       </div>
       <div style={{ textAlign: "center", marginTop: "20px" }}>
         <p><strong>CLES Certification</strong> – English B2 Level</p>
-        <a href="/pdf/CLES.pdf" download="CLES" className="btn" style={{ fontSize: "0.9rem" }}>Download certificate</a>
+        <a href="/pdf/CLES.pdf" target="_blank" rel="noopener noreferrer" className="btn" style={{ fontSize: "0.9rem" }}>View certificate</a>
+        <a href="/pdf/CLES.pdf" download="CLES" className="btn" style={{ fontSize: "0.9rem", marginLeft: "10px" }}>Download certificate</a>
       </div>
     </div>
 
@@ -814,8 +824,10 @@ export default function Home() {
     <p>As a future engineer admitted to CY Tech, I am looking for a work-study apprenticeship in Computer Science starting in September. My objective is to join a company where I can apply my technical skills, continue learning in real-world projects, and contribute with rigor and motivation.</p>
     <p>Download my resume</p>
     <div className="cv-links">
+      <a href="/pdf/Kenza_HALIL_CV_FR.pdf" target="_blank" rel="noopener noreferrer" className="btn">View Resume (French)</a>
       <a href="/pdf/Kenza_HALIL_CV_FR.pdf" download="My_CV_French" className="btn">Download Resume (French)</a>
-      <a href="/pdf/Kenza_HALIL_CV_EN.pdf" download="My_CV_English" className="btn">Download Resume (English)</a>
+      <a href="/pdf/Kenza_HALIL_CV_EN.pdf" target="_blank" rel="noopener noreferrer" className="btn">View Resume (English)</a>
+      <a href="/pdf/Kenza_HALIL_CV_EN.pdf" download="My_CV_English" className="btn" style={{ backgroundColor: "#007bff" }}>Download Resume (English)</a>
     </div>
   </div>
 </section>

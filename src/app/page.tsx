@@ -358,11 +358,27 @@ export default function Home() {
       </div>
 
 
+      {/* Projet : ATS Intelligent */}
+      <div className="project-card">
+        <div className="card-front">
+          <img src="/images/ats.jpg" alt="ATS Intelligent" />
+          <h3>ATS Intelligent</h3>
+          <span className="pill">Projet · IA</span>
+        </div>
+        <div className="card-back">
+          <p>
+            Projet de groupe : système de suivi de candidatures intelligent (ATS) exploitant l'intelligence artificielle pour automatiser et optimiser le processus de recrutement. Analyse automatique des CV, matching intelligent entre candidats et offres d'emploi, et classement des profils les plus pertinents.
+          </p>
+          <a href="https://github.com/KenzaHalil/ATS_Intelligent" target="_blank" rel="noopener noreferrer" className="btn">Code GitHub</a>
+        </div>
+      </div>
+
       {/* Projet : TransportsChatbot */}
       <div className="project-card">
         <div className="card-front">
           <img src="/images/chatbot.jpg" alt="Chatbot transports en commun" />
           <h3>TransportsChatbot</h3>
+          <span className="pill">Projet · IA</span>
         </div>
         <div className="card-back">
           <p>
@@ -402,6 +418,34 @@ export default function Home() {
               </video>
             </div>
           )}
+        </div>
+      </div>
+
+      {/* Projet : Mini Convertisseur de devises */}
+      <div className="project-card">
+        <div className="card-front">
+          <img src="/images/convertisseur.jpg" alt="Mini Convertisseur de devises" />
+          <h3>Mini Convertisseur de devises</h3>
+        </div>
+        <div className="card-back">
+          <p>
+            Application web permettant de convertir des montants entre différentes devises en temps réel. Interface simple et intuitive pour effectuer rapidement des conversions de devises.
+          </p>
+          <a href="https://github.com/KenzaHalil/Mini-Convertisseur-de-devises" target="_blank" rel="noopener noreferrer" className="btn">Voir sur GitHub</a>
+        </div>
+      </div>
+
+      {/* Projet : Bot d'annonces de logement */}
+      <div className="project-card">
+        <div className="card-front">
+          <img src="/images/housing.jpg" alt="Bot d'annonces de logement étudiant" />
+          <h3>Bot d'annonces de logement</h3>
+        </div>
+        <div className="card-back">
+          <p>
+            Bot Python de scraping automatique d'annonces immobilières permettant de trouver des chambres étudiantes, studios et logements à 500 € maximum dans des villes comme La Défense, Courbevoie, Nanterre et les communes environnantes. Le bot agrège les annonces et les filtre selon les critères de prix et de localisation.
+          </p>
+          <a href="https://github.com/KenzaHalil/housing_bot_annonces" target="_blank" rel="noopener noreferrer" className="btn">Voir sur GitHub</a>
         </div>
       </div>
 
@@ -510,20 +554,6 @@ export default function Home() {
         </div>
         <div className="card-back">
           <p>Configuration de serveurs LAMP et conception de réseaux TCP/IP.</p>
-        </div>
-      </div>
-
-      {/* Projet 11 : Bot d'annonces de logement */}
-      <div className="project-card">
-        <div className="card-front">
-          <img src="/images/housing.jpg" alt="Bot d'annonces de logement étudiant" />
-          <h3>Bot d'annonces de logement</h3>
-        </div>
-        <div className="card-back">
-          <p>
-            Bot Python de scraping automatique d'annonces immobilières permettant de trouver des chambres étudiantes, studios et logements à 500 € maximum dans des villes comme La Défense, Courbevoie, Nanterre et les communes environnantes. Le bot agrège les annonces et les filtre selon les critères de prix et de localisation.
-          </p>
-          <a href="https://github.com/KenzaHalil/housing_bot_annonces" target="_blank" rel="noopener noreferrer" className="btn">Voir sur GitHub</a>
         </div>
       </div>
 

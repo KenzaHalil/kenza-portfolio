@@ -352,11 +352,27 @@ export default function Home() {
       </div>
 
 
+      {/* Project: ATS Intelligent */}
+      <div className="project-card">
+        <div className="card-front">
+          <img src="/images/ats.jpg" alt="Intelligent ATS" />
+          <h3>Intelligent ATS</h3>
+          <span className="pill">Project · AI</span>
+        </div>
+        <div className="card-back">
+          <p>
+            Group project: an intelligent Applicant Tracking System (ATS) leveraging artificial intelligence to automate and optimize the recruitment process. Features automatic CV analysis, intelligent matching between candidates and job offers, and ranking of the most relevant profiles.
+          </p>
+          <a href="https://github.com/KenzaHalil/ATS_Intelligent" target="_blank" rel="noopener noreferrer" className="btn">GitHub Code</a>
+        </div>
+      </div>
+
       {/* Project: TransportsChatbot */}
       <div className="project-card">
         <div className="card-front">
           <img src="/images/chatbot.jpg" alt="French public transport chatbot" />
           <h3>TransportsChatbot</h3>
+          <span className="pill">Project · AI</span>
         </div>
         <div className="card-back">
           <p>
@@ -397,6 +413,34 @@ export default function Home() {
         </div>
       </div>
       
+
+      {/* Project: Mini Currency Converter */}
+      <div className="project-card">
+        <div className="card-front">
+          <img src="/images/convertisseur.jpg" alt="Mini Currency Converter" />
+          <h3>Mini Currency Converter</h3>
+        </div>
+        <div className="card-back">
+          <p>
+            Web application for converting amounts between different currencies in real time. Simple and intuitive interface for quick currency conversions.
+          </p>
+          <a href="https://github.com/KenzaHalil/Mini-Convertisseur-de-devises" target="_blank" rel="noopener noreferrer" className="btn">View on GitHub</a>
+        </div>
+      </div>
+
+      {/* Project: Housing Listings Bot */}
+      <div className="project-card">
+        <div className="card-front">
+          <img src="/images/housing.jpg" alt="Housing listings bot for students" />
+          <h3>Housing Listings Bot</h3>
+        </div>
+        <div className="card-back">
+          <p>
+            Python scraping bot that automatically finds housing listings — student rooms, studios, and apartments priced under €500 — in cities such as La Défense, Courbevoie, Nanterre, and surrounding areas. The bot aggregates and filters listings based on price and location criteria.
+          </p>
+          <a href="https://github.com/KenzaHalil/housing_bot_annonces" target="_blank" rel="noopener noreferrer" className="btn">View on GitHub</a>
+        </div>
+      </div>
 
       {/* Project 2: Portfolio Version 1 */}
       <div className="project-card">
@@ -501,20 +545,6 @@ export default function Home() {
         </div>
         <div className="card-back">
           <p>Configuration of LAMP servers and TCP/IP network design.</p>
-        </div>
-      </div>
-
-      {/* Project 11: Housing Listings Bot */}
-      <div className="project-card">
-        <div className="card-front">
-          <img src="/images/housing.jpg" alt="Housing listings bot for students" />
-          <h3>Housing Listings Bot</h3>
-        </div>
-        <div className="card-back">
-          <p>
-            Python scraping bot that automatically finds housing listings — student rooms, studios, and apartments priced under €500 — in cities such as La Défense, Courbevoie, Nanterre, and surrounding areas. The bot aggregates and filters listings based on price and location criteria.
-          </p>
-          <a href="https://github.com/KenzaHalil/housing_bot_annonces" target="_blank" rel="noopener noreferrer" className="btn">View on GitHub</a>
         </div>
       </div>
 

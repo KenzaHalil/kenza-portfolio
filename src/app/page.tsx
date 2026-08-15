@@ -1,4 +1,4 @@
-
+﻿
 "use client";
 import { useState, useEffect, useRef } from "react";
 import Head from "next/head";
@@ -149,8 +149,8 @@ export default function Home() {
         <div className="hero-content">
           <h1>Kenza HALIL</h1>
           <p><strong>Future ingénieure à CY Tech (admise pour la prochaine rentrée)</strong></p>
-          <p><strong>À la recherche d’une alternance en informatique à partir de septembre</strong></p>
-          <p><strong>“Code ton futur avec passion & détermination!”</strong></p>
+          <p><strong>En cours de recrutement pour rejoindre BNP Paribas en alternance pour mon cycle ingénieur de 3 ans à CY Tech</strong></p>
+          <p className={'hero-quote'}>&#8220;Code ton futur avec passion &#38; d&#233;termination!&#8221;</p>
         </div>
       </header>
 
@@ -165,7 +165,7 @@ export default function Home() {
                 </div>
                 <div className="texte">
                 <p>
-                  Bonjour, je m’appelle Kenza HALIL. Étudiante en troisième année de BUT Informatique à l’IUT de Villetaneuse – Université Sorbonne Paris Nord, je réalise actuellement une alternance de 12 mois à CY Cergy Paris Université. Je suis également admise à l’école d’ingénieurs CY Tech pour la prochaine rentrée et je suis à la recherche d’une alternance en informatique à partir de septembre. Passionnée par l’informatique et le développement, je m’investis pleinement dans des projets visant à renforcer mes compétences techniques, tout en développant une approche rigoureuse et professionnelle du monde du numérique.
+                  Bonjour, je m’appelle Kenza HALIL. Étudiante en troisième année de BUT Informatique à l’IUT de Villetaneuse – Université Sorbonne Paris Nord, je réalise actuellement une alternance de 12 mois à CY Cergy Paris Université. Je suis également admise à l’école d’ingénieurs CY Tech pour la prochaine rentrée et je suis actuellement en cours de recrutement pour rejoindre BNP Paribas en alternance pour mon cycle ingénieur de 3 ans à CY Tech. Passionnée par l’informatique et le développement, je m’investis pleinement dans des projets visant à renforcer mes compétences techniques, tout en développant une approche rigoureuse et professionnelle du monde du numérique.
                 </p>
                 <p>
                     Au cours de mes études, j'ai acquis une solide maîtrise des langages de programmation tels que Python, PHP, JavaScript, ainsi que des technologies web comme HTML, CSS, et jQuery. J’ai également travaillé sur des projets de développement backend, impliquant la conception et la gestion de bases de données relationnelles (SQL, PostgreSQL), ainsi que sur le développement d’interfaces front-end. Par ailleurs, j’ai participé à un projet de développement d’application mobile intégrant des modèles d’intelligence artificielle, visant à analyser des caractéristiques telles que l’âge, l’ethnie et le genre à partir de données visuelles
@@ -392,6 +392,7 @@ export default function Home() {
             <strong>BDD :</strong> SQLite &nbsp;|&nbsp;
             <strong>Données :</strong> Open data SNCF &amp; IDFM
           </p>
+          <a href="https://github.com/KenzaHalil/TransportsChatbot" target="_blank" rel="noopener noreferrer" className="btn">Code GitHub</a>
         </div>
       </div>
 
@@ -1031,6 +1032,17 @@ export default function Home() {
           font-size: 1.8rem;
           color: #111;
           margin-top: 10px;
+        }
+
+        .hero-quote {
+          font-style: italic;
+          font-size: 1.5rem !important;
+          color: #0070f3 !important;
+          font-weight: 700;
+          margin-top: 20px !important;
+          padding-top: 14px;
+          border-top: 2px solid rgba(0, 0, 0, 0.15);
+          letter-spacing: 0.5px;
         }
 
         section {

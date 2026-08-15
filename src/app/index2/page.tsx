@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import Link from "next/link";
@@ -147,8 +147,8 @@ export default function Home() {
         <div className="hero-content">
           <h1>Kenza HALIL</h1>
           <p><strong>Future Engineer at CY Tech – admitted for the next academic year</strong></p>
-          <p><strong>Looking for a work-study apprenticeship in Computer Science starting September</strong></p>
-          <p><strong>“Code your future with passion & determination!”</strong></p>
+          <p><strong>Currently in the recruitment process to join BNP Paribas as an apprentice for my 3-year engineering cycle at CY Tech</strong></p>
+          <p className={'hero-quote'}>&#8220;Code your future with passion &#38; determination!&#8221;</p>
         </div>
       </header>
 
@@ -163,7 +163,7 @@ export default function Home() {
         </div>
         <div className="texte">
           <p>
-            Hello, my name is Kenza HALIL. I am currently a third-year student in a Bachelor of Computer Science at IUT Villetaneuse – Sorbonne Paris North University, and I am completing a 12-month apprenticeship at CY Cergy Paris University. I am also admitted to CY Tech engineering school for the next academic year and I am looking for a work-study apprenticeship in Computer Science starting in September. Passionate about computer science and development, I am fully committed to projects aimed at strengthening my technical skills while developing a rigorous and professional approach to the digital world.
+            Hello, my name is Kenza HALIL. I am currently a third-year student in a Bachelor of Computer Science at IUT Villetaneuse – Sorbonne Paris North University, and I am completing a 12-month apprenticeship at CY Cergy Paris University. I am also admitted to CY Tech engineering school for the next academic year and I am currently in the recruitment process to join BNP Paribas as an apprentice for my 3-year engineering cycle at CY Tech. Passionate about computer science and development, I am fully committed to projects aimed at strengthening my technical skills while developing a rigorous and professional approach to the digital world.
           </p>
           <p>
             During my studies, I have gained solid expertise in programming languages such as Python, PHP, and JavaScript, as well as web technologies like HTML, CSS, and jQuery. I have also worked on backend development projects involving the design and management of relational databases (SQL, PostgreSQL), as well as front-end interface development. Additionally, I participated in a mobile application development project integrating artificial intelligence models to analyze characteristics such as age, ethnicity, and gender from visual data.
@@ -386,6 +386,7 @@ export default function Home() {
             <strong>DB:</strong> SQLite &nbsp;|&nbsp;
             <strong>Data:</strong> SNCF &amp; IDFM open data
           </p>
+          <a href="https://github.com/KenzaHalil/TransportsChatbot" target="_blank" rel="noopener noreferrer" className="btn">GitHub Code</a>
         </div>
       </div>
 
@@ -1024,6 +1025,17 @@ export default function Home() {
           font-size: 1.8rem;
           color: #111;
           margin-top: 10px;
+        }
+
+        .hero-quote {
+          font-style: italic;
+          font-size: 1.5rem !important;
+          color: #0070f3 !important;
+          font-weight: 700;
+          margin-top: 20px !important;
+          padding-top: 14px;
+          border-top: 2px solid rgba(0, 0, 0, 0.15);
+          letter-spacing: 0.5px;
         }
 
         section {
